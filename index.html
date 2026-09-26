@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pranay · Founder, Engineer, One-Man Airline</title>
 <meta name="description" content="Pranay builds and ships complete products end to end: Floo, Murmur, and client work. Founder of Gofloo Tech, Bhopal.">
-<link rel="canonical" href="https://portfolio-beta-lemon-3d57ut9saa.vercel.app/">
+<link rel="canonical" href="https://pranaypratap.vercel.app/">
 <meta name="theme-color" content="#090d1c">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://portfolio-beta-lemon-3d57ut9saa.vercel.app/">
+<meta property="og:url" content="https://pranaypratap.vercel.app/">
 <meta property="og:title" content="Pranay · Founder, Engineer, One-Man Airline">
 <meta property="og:description" content="Pranay builds and ships complete products end to end: Floo, Murmur, and client work. Founder of Gofloo Tech, Bhopal.">
-<meta property="og:image" content="https://portfolio-beta-lemon-3d57ut9saa.vercel.app/og.png">
+<meta property="og:image" content="https://pranaypratap.vercel.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Split-flap board spelling PRANAY against a night sky">
@@ -202,6 +202,11 @@
   .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -8px rgba(242, 177, 53, .75); background: #ffc14e; }
   .ctas { display: grid; gap: 8px; margin-top: 12px; }
   .ctas .cta { margin-top: 0; }
+  .ctarow { display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px; }
+  .t-charter .from { margin-left: 4px; font-family: var(--mono); font-size: 10.5px; color: var(--label); white-space: nowrap; }
+  .t-charter .book { margin-top: 6px; text-align: center; font-family: var(--mono); font-size: 11px; }
+  .t-charter .book a { color: var(--amber); text-decoration: none; }
+  .t-charter .book a:hover { text-decoration: underline; text-underline-offset: 3px; }
   .cta.ghost { background: transparent; color: var(--ink); border: 1px solid color-mix(in srgb, var(--amber) 55%, transparent); box-shadow: none; padding: 11px 18px; }
   .cta.ghost:hover { background: color-mix(in srgb, var(--amber) 12%, transparent); box-shadow: none; }
   .t-charter .sla { margin-top: 9px; text-align: center; font-family: var(--mono); font-size: 10px; color: var(--label); }
@@ -237,6 +242,21 @@
   .drow.sched, .drow.sched .name, .drow.sched .route, .st.sched { color: var(--label); }
   .proof { margin-top: 12px; font-family: var(--mono); font-size: 11px; color: var(--dim); }
   .proof b { color: var(--amber); font-weight: 600; }
+
+  /* incidents tile */
+  .t-inc { grid-column: 1 / -1; min-height: 0; }
+  .icols, .irow {
+    display: grid; grid-template-columns: 74px minmax(160px, 1fr) 2.4fr 118px; gap: 12px; align-items: baseline;
+    padding: 10px 2px; font-family: var(--mono); font-size: 13px;
+  }
+  .icols { font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--label); padding-bottom: 6px; }
+  .irow { border-top: 1px solid var(--board-line); }
+  .irow .code { grid-column: 1; grid-row: 1; color: var(--label); }
+  .irow .name { grid-column: 2; grid-row: 1; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .irow .fix { grid-column: 3; grid-row: 1; font-family: var(--sans); font-size: 13px; color: var(--dim); }
+  .irow .st { grid-column: 4; grid-row: 1; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+  .st.ok { color: var(--live); }
+  .st.ok::before { content: "✓"; margin-right: 6px; }
 
   /* atc tile */
   .t-atc p { margin-top: 12px; font-size: 13.5px; color: var(--dim); max-width: 30ch; }
@@ -325,6 +345,15 @@
   .flipbtn:hover { border-style: solid; border-color: var(--paper-ink); }
   .legs { list-style: none; padding: 0; margin-top: 10px; display: grid; gap: 7px; font-size: 13px; }
   .legs .lg { display: block; font-family: var(--mono); font-size: 9.5px; letter-spacing: .15em; text-transform: uppercase; color: #8a8371; }
+  .pbook { display: inline-block; margin-top: 2px; font-size: 12.5px; font-weight: 600; color: var(--paper-ink); text-decoration-color: var(--amber-deep); text-underline-offset: 3px; }
+  .pctas { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 12px; }
+  .pctas .pcta { margin-top: 0; }
+  .pghost {
+    display: inline-flex; align-items: center; padding: 7px 16px; border-radius: 9px;
+    border: 1px solid var(--amber-deep); color: var(--paper-ink); font-weight: 700; font-size: 13.5px; text-decoration: none;
+    transition: background .2s ease;
+  }
+  .pghost:hover { background: color-mix(in srgb, var(--amber) 18%, transparent); }
   .pcta { display: inline-block; margin-top: 12px; font-weight: 700; font-size: 13.5px; color: var(--paper-ink); text-decoration-color: var(--amber-deep); text-underline-offset: 4px; text-decoration-thickness: 2px; }
   .pm { padding: 18px 20px; }
   .ph { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: #6d675a; }
@@ -357,6 +386,12 @@
     .drow { grid-template-columns: 1fr 116px 14px; }
     .drow .code, .drow .route { display: none; }
     .fd { padding-left: 2px; }
+    .icols { display: none; }
+    .irow { grid-template-columns: 1fr 104px; gap: 4px 12px; }
+    .irow .code { display: none; }
+    .irow .name { grid-column: 1; }
+    .irow .st { grid-column: 2; }
+    .irow .fix { grid-column: 1 / -1; grid-row: 2; }
     .pface { grid-template-columns: 1fr; }
     .pstub { border-left: 0; border-top: 2px dashed #b9b19c; flex-direction: row; align-items: center; gap: 14px; }
     .bar { flex: 1; }
@@ -419,19 +454,24 @@
       <span class="label"><span class="dot">●</span> Charter services</span>
       <h2>Hire the airline.</h2>
       <p class="pitch">The same hands that built and shipped two live products can build yours. One person, the output of a team.</p>
-      <ul>
-        <li>MVPs, idea to app store, in weeks</li>
-        <li>Mobile apps for iOS and Android, one codebase</li>
-        <li>Backends and APIs on Django and AWS, production grade</li>
-        <li>Landing pages that load fast and convert</li>
+      <ul class="services">
+        <li><span>MVPs, idea to app store, in weeks <span class="from">from ₹1.5L</span></span></li>
+        <li><span>Mobile apps for iOS and Android, one codebase <span class="from">from ₹80k</span></span></li>
+        <li><span>Backends and APIs on Django and AWS, production grade <span class="from">from ₹30k</span></span></li>
+        <li><span>Business websites your team can update without a developer <span class="from">from ₹25k</span></span></li>
+        <li><span>Landing pages that load fast and convert <span class="from">from ₹15k</span></span></li>
       </ul>
       <p class="youget"><b>You get:</b> the source code, the deployment, and a clean handover. No lock-in.</p>
       <div class="avail"><span class="p"></span> Accepting 1 to 2 client projects</div>
       <div class="ctas">
-        <a class="cta" href="mailto:mail.pranay95@gmail.com?subject=Charter%20request%3A%20project%20inquiry&amp;body=Hi%20Pranay%2C%0A%0AWhat%20I%20am%20building%3A%0APlatforms%20(iOS%20%2F%20Android%20%2F%20web%20%2F%20backend)%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0AThanks%2C">Request a quote</a>
+        <div class="ctarow">
+          <a class="cta" href="mailto:mail.pranay95@gmail.com?subject=Charter%20request%3A%20project%20inquiry&amp;body=Hi%20Pranay%2C%0A%0AWhat%20I%20am%20building%3A%0APlatforms%20(iOS%20%2F%20Android%20%2F%20web%20%2F%20backend)%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0AThanks%2C">Request a quote</a>
+          <a class="cta ghost" href="https://wa.me/917000326766" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
         <a class="cta ghost" href="#departures">See the work</a>
       </div>
       <p class="sla">Replies within 24 hours, IST</p>
+      <p class="book"><a href="https://calendly.com/mail-pranay95/15min" target="_blank" rel="noopener noreferrer">Book a 15 min call ↗</a></p>
     </section>
 
     <!-- DEPARTURES -->
@@ -439,46 +479,36 @@
       <span class="label"><span class="dot">●</span> Departures</span>
       <div class="rowsbox">
         <div class="cols" aria-hidden="true"><span>Flight</span><span>Service</span><span>Route</span><span>Status</span><span></span></div>
-        <details class="flight">
-          <summary class="drow">
-            <span class="code">FL·01</span>
-            <span class="name">Floo <span class="desc">Verified travel companions for trips in India</span></span>
-            <span class="route">BHO → iOS / Android</span><span class="st live" data-alt="iOS·Android">In flight</span>
-            <span class="chev" aria-hidden="true">▾</span>
-          </summary>
-          <div class="fd">
-            <p>Find people to travel with on trips across India, where every user is Aadhaar-verified before they can join.</p>
-            <dl class="fdg">
-              <div><dt>Platform</dt><dd>iOS · Android</dd></div>
-              <div><dt>Verification</dt><dd>Aadhaar</dd></div>
-              <div><dt>Crew</dt><dd>One, end to end</dd></div>
-            </dl>
-            <a class="fdlink" href="https://gofloo.in" target="_blank" rel="noopener">Visit gofloo.in ↗</a>
-          </div>
-        </details>
-        <details class="flight">
-          <summary class="drow">
-            <span class="code">MU·02</span>
-            <span class="name">Murmur <span class="desc">Say the idea before it's gone</span></span>
-            <span class="route">BHO → macOS</span><span class="st live" data-alt="Free">In flight</span>
-            <span class="chev" aria-hidden="true">▾</span>
-          </summary>
-          <div class="fd">
-            <p>A floating dot on your Mac. Press ⌃⌥⌘Space, say the idea, and it lands in Apple Notes, transcribed on-device. No servers, no telemetry.</p>
-            <dl class="fdg">
-              <div><dt>Platform</dt><dd>macOS 14+ · Apple Silicon</dd></div>
-              <div><dt>Price</dt><dd>Free</dd></div>
-              <div><dt>Crew</dt><dd>One, end to end</dd></div>
-            </dl>
-            <a class="fdlink" href="https://trymurmur.in" target="_blank" rel="noopener">Visit trymurmur.in ↗</a>
-          </div>
-        </details>
+        <div id="flights"></div>
         <div class="drow sched">
           <span class="code">··</span><span class="name">Next departure</span>
           <span class="route">TBA</span><span class="st sched">Scheduled</span><span></span>
         </div>
       </div>
-      <p class="proof">Proof of flight: <b>2 products live</b> in public app stores, built end to end by one person.</p>
+      <p class="proof">Proof of flight: <b id="livecount">2 products live</b> in public app stores, built end to end by one person.</p>
+    </section>
+
+    <!-- INCIDENTS -->
+    <section class="tile t-inc" id="incidents">
+      <span class="label"><span class="dot">●</span> Flight incidents resolved</span>
+      <div class="rowsbox">
+        <div class="icols" aria-hidden="true"><span>Ref</span><span>Incident</span><span>Resolution</span><span>Status</span></div>
+        <div class="irow">
+          <span class="code">INC·01</span><span class="name">Android SDK 36 migration</span>
+          <span class="st ok">Resolved</span>
+          <span class="fix">Upgraded to Expo SDK 54 and React Native 0.81, fixed a runtime crash, shipped to Play before the deadline</span>
+        </div>
+        <div class="irow">
+          <span class="code">INC·02</span><span class="name">Security audit</span>
+          <span class="st ok">Resolved</span>
+          <span class="fix">Rotated all production credentials, closed a token leak in server logs, hardened S3 storage</span>
+        </div>
+        <div class="irow">
+          <span class="code">INC·03</span><span class="name">Analytics rebuild</span>
+          <span class="st ok">Resolved</span>
+          <span class="fix">Rebuilt funnel, acceptance rate, and retention metrics so the numbers could be trusted</span>
+        </div>
+      </div>
     </section>
 
     <!-- ATC -->
@@ -533,6 +563,7 @@
               <a href="https://github.com/Pranay-Pratap" target="_blank" rel="noopener">github</a>
               <a href="https://www.linkedin.com/in/pranay-pratap-s/" target="_blank" rel="noopener">linkedin</a>
               <a href="https://x.com/PranayPratap_" target="_blank" rel="noopener">x</a>
+              <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">whatsapp</a>
             </nav>
           </div>
           <div class="pstub">
@@ -545,11 +576,15 @@
           <div class="pm">
             <div class="ph"><span>Charter itinerary</span><span>3 legs</span></div>
             <ol class="legs">
-              <li><span class="lg">Leg 1 · Brief</span>Tell me what you're building. I reply with scope, timeline, and a quote.</li>
+              <li><span class="lg">Leg 1 · Brief</span>Tell me what you're building. I reply with scope, timeline, and a quote.
+                <a class="pbook" href="https://calendly.com/mail-pranay95/15min" target="_blank" rel="noopener noreferrer">Book a 15 min call ↗</a></li>
               <li><span class="lg">Leg 2 · Build</span>Frequent builds you can open and test, not a big reveal at the end.</li>
               <li><span class="lg">Leg 3 · Launch</span>Deployed, submitted to the stores, and handed over. The code is yours.</li>
             </ol>
-            <a class="pcta" href="mailto:mail.pranay95@gmail.com?subject=Charter%20request%3A%20project%20inquiry&amp;body=Hi%20Pranay%2C%0A%0AWhat%20I%20am%20building%3A%0APlatforms%20(iOS%20%2F%20Android%20%2F%20web%20%2F%20backend)%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0AThanks%2C">Request a quote →</a>
+            <div class="pctas">
+              <a class="pcta" href="mailto:mail.pranay95@gmail.com?subject=Charter%20request%3A%20project%20inquiry&amp;body=Hi%20Pranay%2C%0A%0AWhat%20I%20am%20building%3A%0APlatforms%20(iOS%20%2F%20Android%20%2F%20web%20%2F%20backend)%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0AThanks%2C">Request a quote →</a>
+              <a class="pghost" href="https://wa.me/917000326766" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
           </div>
           <div class="pstub">
             <div><div class="seatl">Crew</div><div class="seat">1</div></div>
@@ -583,6 +618,66 @@
 (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var root = document.documentElement;
+
+  /* departures board: to add a flight, add one object to this list.
+     status cycles to alt on the board; facts are [label, value] pairs. */
+  var DEPARTURES = [
+    {
+      code: "FL·01", name: "Floo", tagline: "Verified travel companions for trips in India",
+      route: "BHO → iOS / Android", status: "In flight", alt: "iOS·Android",
+      about: "Find people to travel with on trips across India, where every user is Aadhaar-verified before they can join.",
+      facts: [["Platform", "iOS · Android"], ["Verification", "Aadhaar"], ["Crew", "One, end to end"]],
+      url: "https://gofloo.in", site: "gofloo.in"
+    },
+    {
+      code: "MU·02", name: "Murmur", tagline: "Say the idea before it's gone",
+      route: "BHO → macOS", status: "In flight", alt: "Free",
+      about: "A floating dot on your Mac. Press ⌃⌥⌘Space, say the idea, and it lands in Apple Notes, transcribed on-device. No servers, no telemetry.",
+      facts: [["Platform", "macOS 14+ · Apple Silicon"], ["Price", "Free"], ["Crew", "One, end to end"]],
+      url: "https://trymurmur.in", site: "trymurmur.in"
+    }
+  ];
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function renderFlight(f) {
+    var d = el("details", "flight");
+    var s = el("summary", "drow");
+    s.appendChild(el("span", "code", f.code));
+    var name = el("span", "name", f.name + " ");
+    name.appendChild(el("span", "desc", f.tagline));
+    s.appendChild(name);
+    s.appendChild(el("span", "route", f.route));
+    var st = el("span", "st live", f.status);
+    if (f.alt) st.setAttribute("data-alt", f.alt);
+    s.appendChild(st);
+    var chev = el("span", "chev", "▾");
+    chev.setAttribute("aria-hidden", "true");
+    s.appendChild(chev);
+    d.appendChild(s);
+    var fd = el("div", "fd");
+    fd.appendChild(el("p", null, f.about));
+    var dl = el("dl", "fdg");
+    f.facts.forEach(function (fact) {
+      var w = el("div");
+      w.appendChild(el("dt", null, fact[0]));
+      w.appendChild(el("dd", null, fact[1]));
+      dl.appendChild(w);
+    });
+    fd.appendChild(dl);
+    var a = el("a", "fdlink", "Visit " + f.site + " ↗");
+    a.href = f.url; a.target = "_blank"; a.rel = "noopener";
+    fd.appendChild(a);
+    d.appendChild(fd);
+    return d;
+  }
+  var flightsBox = document.getElementById("flights");
+  DEPARTURES.forEach(function (f) { flightsBox.appendChild(renderFlight(f)); });
+  document.getElementById("livecount").textContent = DEPARTURES.length + (DEPARTURES.length === 1 ? " product live" : " products live");
 
   /* stars */
   var stars = document.getElementById("stars");
