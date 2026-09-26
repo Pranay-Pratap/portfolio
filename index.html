@@ -5,14 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pranay · Founder, Engineer, One-Man Airline</title>
 <meta name="description" content="Pranay builds and ships complete products end to end: Floo, Murmur, and client work. Founder of Gofloo Tech, Bhopal.">
+<link rel="canonical" href="https://portfolio-beta-lemon-3d57ut9saa.vercel.app/">
+<meta name="theme-color" content="#090d1c">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://portfolio-beta-lemon-3d57ut9saa.vercel.app/">
+<meta property="og:title" content="Pranay · Founder, Engineer, One-Man Airline">
+<meta property="og:description" content="Pranay builds and ships complete products end to end: Floo, Murmur, and client work. Founder of Gofloo Tech, Bhopal.">
+<meta property="og:image" content="https://portfolio-beta-lemon-3d57ut9saa.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Split-flap board spelling PRANAY against a night sky">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@PranayPratap_">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23161a26'/%3E%3Ctext x='16' y='24' font-family='monospace' font-weight='700' font-size='22' fill='%23f2b135' text-anchor='middle'%3EP%3C/text%3E%3Crect y='15.5' width='32' height='1' fill='%23000' opacity='.7'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
     --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
     --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
     --amber: #f2b135;
@@ -69,8 +80,9 @@
     -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 3px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 3px; }
   .px { image-rendering: pixelated; image-rendering: crisp-edges; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
   /* ================= SKY ================= */
   .skybg { position: fixed; inset: 0; z-index: 0; overflow: hidden; }
@@ -128,7 +140,8 @@
     min-height: 172px;
     transition: border-color .3s ease, background .5s ease, transform .25s ease;
   }
-  .tile:hover { border-color: var(--tile-hover); transform: translateY(-2px); }
+  .tile:hover { border-color: var(--tile-hover); }
+  .t-charter:hover, .t-pass:hover { transform: translateY(-2px); }
   .span2 { grid-column: span 2; }
   .rows2 { grid-row: span 2; }
   .label {
@@ -140,7 +153,9 @@
   /* identity tile */
   .t-id .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
   .t-id time { font-family: var(--mono); font-size: 11px; color: var(--dim); font-variant-numeric: tabular-nums; }
-  .flapline { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 4px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .flaph { margin: 16px 0 0; font-size: inherit; line-height: 1; }
+  .flapline { display: block; padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .flaps { display: flex; flex-wrap: wrap; gap: 4px; }
   .flyonce { position: fixed; left: 0; width: 208px; z-index: 5; pointer-events: none; animation: flyonce 6.5s linear forwards; filter: drop-shadow(0 3px 8px rgba(0,0,0,.35)); }
   .flyonce img { width: 100%; height: auto; }
   @keyframes flyonce { from { transform: translateX(-260px); } to { transform: translateX(calc(100vw + 300px)); } }
@@ -170,6 +185,8 @@
   .t-charter ul { list-style: none; padding: 0; margin-top: 14px; display: grid; gap: 8px; }
   .t-charter li { display: flex; gap: 9px; font-size: 13.5px; align-items: baseline; }
   .t-charter li::before { content: "▸"; color: var(--amber); font-size: 11px; }
+  .t-charter .youget { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--board-line); font-size: 13px; color: var(--dim); }
+  .t-charter .youget b { color: var(--ink); }
   .avail { margin-top: auto; padding-top: 16px; display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; color: var(--dim); }
   .avail .p { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--live); }
   .avail .p::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--live); animation: ping 2.2s cubic-bezier(0,0,.2,1) infinite; }
@@ -183,21 +200,37 @@
     transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
   }
   .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -8px rgba(242, 177, 53, .75); background: #ffc14e; }
+  .ctas { display: grid; gap: 8px; margin-top: 12px; }
+  .ctas .cta { margin-top: 0; }
+  .cta.ghost { background: transparent; color: var(--ink); border: 1px solid color-mix(in srgb, var(--amber) 55%, transparent); box-shadow: none; padding: 11px 18px; }
+  .cta.ghost:hover { background: color-mix(in srgb, var(--amber) 12%, transparent); box-shadow: none; }
   .t-charter .sla { margin-top: 9px; text-align: center; font-family: var(--mono); font-size: 10px; color: var(--label); }
 
   /* departures tile */
   .rowsbox { margin-top: 12px; }
   .cols, .drow {
-    display: grid; grid-template-columns: 74px 1fr 1.1fr 118px; gap: 12px; align-items: baseline;
+    display: grid; grid-template-columns: 74px 1fr 1.1fr 118px 14px; gap: 12px; align-items: baseline;
     padding: 10px 2px; font-family: var(--mono); font-size: 13px;
   }
   .cols { font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--label); padding-bottom: 6px; }
   .drow { border-top: 1px solid var(--board-line); text-decoration: none; transition: background .2s ease; border-radius: 6px; }
-  a.drow:hover { background: color-mix(in srgb, var(--amber) 8%, transparent); }
+  .flight summary { cursor: pointer; list-style: none; }
+  .flight summary::-webkit-details-marker { display: none; }
+  .flight summary:hover, .flight[open] summary { background: color-mix(in srgb, var(--amber) 8%, transparent); }
   .drow .code { color: var(--label); }
   .drow .name { font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .drow .desc { display: block; margin-top: 3px; font-family: var(--sans); font-size: 12.5px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--dim); }
   .drow .route { color: var(--dim); }
-  .drow .st { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
+  .drow .st { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+  .drow .chev { color: var(--label); font-size: 11px; transition: transform .25s ease; justify-self: end; }
+  .flight[open] .chev { transform: rotate(180deg); color: var(--amber); }
+  .fd { padding: 6px 2px 14px 88px; font-size: 13.5px; color: var(--dim); }
+  .fd p { max-width: 60ch; }
+  .fdg { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 10px; }
+  .fdg dt { font-family: var(--mono); font-size: 9.5px; letter-spacing: .15em; text-transform: uppercase; color: var(--label); }
+  .fdg dd { margin: 2px 0 0; font-family: var(--mono); font-size: 12.5px; color: var(--ink); }
+  .fdlink { display: inline-block; margin-top: 12px; font-family: var(--mono); font-size: 12.5px; color: var(--amber); text-decoration: none; }
+  .fdlink:hover { text-decoration: underline; text-underline-offset: 3px; }
   .st.live { color: var(--live); }
   .st.live::before { content: "●"; margin-right: 6px; font-size: 8px; vertical-align: 1px; animation: blink 2.4s infinite; }
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
@@ -210,11 +243,32 @@
   .t-atc .tower { position: absolute; right: 14px; bottom: 0; width: 78px; }
   .t-atc .tower img { width: 100%; height: auto; display: block; }
   .t-atc .beacon {
-    position: absolute; right: calc(14px + 36px); bottom: 126px;
+    position: absolute; left: 50%; top: 3%; margin-left: -3px;
     width: 6px; height: 6px; border-radius: 50%; background: var(--red);
     box-shadow: 0 0 12px 3px rgba(255, 90, 90, .8);
     animation: blink 2.2s ease-in-out infinite;
   }
+  .radar {
+    position: relative; width: 96px; height: 96px; margin-top: 16px; border-radius: 50%;
+    --rl: color-mix(in srgb, var(--live) 28%, transparent);
+    border: 1px solid color-mix(in srgb, var(--live) 50%, transparent);
+    background:
+      radial-gradient(circle, transparent 0 30%, var(--rl) 30.5% 31.5%, transparent 32% 63%, var(--rl) 63.5% 64.5%, transparent 65%),
+      linear-gradient(var(--rl), var(--rl)) center / 1px 100% no-repeat,
+      linear-gradient(var(--rl), var(--rl)) center / 100% 1px no-repeat,
+      #07150f;
+  }
+  .radar .sweep {
+    position: absolute; inset: 0; border-radius: 50%;
+    background: conic-gradient(transparent 0deg, color-mix(in srgb, var(--live) 55%, transparent) 70deg, transparent 70.5deg);
+    animation: sweep 4s linear infinite;
+  }
+  @keyframes sweep { to { transform: rotate(360deg); } }
+  .radar .blip { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: var(--live); box-shadow: 0 0 6px var(--live); animation: blipfade 4s linear infinite; }
+  .radar .blip span { position: absolute; left: 8px; top: -4px; font-family: var(--mono); font-size: 8.5px; letter-spacing: .06em; color: var(--live); white-space: nowrap; }
+  .radar .b1 { left: 65px; top: 61px; animation-delay: -3.333s; }
+  .radar .b2 { left: 21px; top: 35px; animation-delay: -1.556s; }
+  @keyframes blipfade { 0% { opacity: 1; } 70%, 100% { opacity: .2; } }
 
   /* flight log tile */
   .t-log ol { list-style: none; padding: 0; margin-top: 12px; }
@@ -253,8 +307,25 @@
   @keyframes eq { 0%, 100% { transform: scaleY(.5); } 50% { transform: scaleY(1); } }
 
   /* boarding pass tile */
-  .t-pass { padding: 0; background: var(--paper); border-color: #cdc2a8; color: var(--paper-ink); display: grid; grid-template-columns: 1fr 150px; }
-  .t-pass:hover { border-color: var(--amber-deep); }
+  .t-pass { padding: 0; background: none; border: 0; backdrop-filter: none; -webkit-backdrop-filter: none; overflow: visible; color: var(--paper-ink); perspective: 1600px; }
+  .pcard { display: grid; height: 100%; transform-style: preserve-3d; transition: transform .75s cubic-bezier(.3, .1, .2, 1); }
+  .t-pass.flipped .pcard { transform: rotateY(180deg); }
+  .pface {
+    grid-area: 1 / 1; display: grid; grid-template-columns: 1fr 150px;
+    background: var(--paper); border: 1px solid #cdc2a8; border-radius: 12px; overflow: hidden;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
+    transition: border-color .3s ease;
+  }
+  .pback { transform: rotateY(180deg); }
+  .t-pass:hover .pface { border-color: var(--amber-deep); }
+  .flipbtn {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 6px 9px; border-radius: 6px; border: 1px dashed #b9b19c; background: transparent; color: var(--paper-ink); cursor: pointer;
+  }
+  .flipbtn:hover { border-style: solid; border-color: var(--paper-ink); }
+  .legs { list-style: none; padding: 0; margin-top: 10px; display: grid; gap: 7px; font-size: 13px; }
+  .legs .lg { display: block; font-family: var(--mono); font-size: 9.5px; letter-spacing: .15em; text-transform: uppercase; color: #8a8371; }
+  .pcta { display: inline-block; margin-top: 12px; font-weight: 700; font-size: 13.5px; color: var(--paper-ink); text-decoration-color: var(--amber-deep); text-underline-offset: 4px; text-decoration-thickness: 2px; }
   .pm { padding: 18px 20px; }
   .ph { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: #6d675a; }
   .pname { font-size: clamp(19px, 4.6vw, 24px); font-weight: 900; margin-top: 6px; letter-spacing: -0.01em; }
@@ -264,7 +335,7 @@
   .plinks { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; }
   .plinks a { color: var(--paper-ink); font-weight: 500; text-decoration-color: #b9b19c; text-underline-offset: 3px; }
   .plinks a:hover { text-decoration-color: var(--paper-ink); }
-  .pstub { border-left: 2px dashed #b9b19c; padding: 18px 14px; display: flex; flex-direction: column; justify-content: space-between; font-family: var(--mono); }
+  .pstub { border-left: 2px dashed #b9b19c; padding: 18px 14px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; font-family: var(--mono); }
   .seatl { font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: #8a8371; }
   .seat { font-size: 24px; font-weight: 600; }
   .bar { height: 38px; background: repeating-linear-gradient(90deg, #201c15 0 2px, transparent 2px 5px, #201c15 5px 6px, transparent 6px 10px, #201c15 10px 13px, transparent 13px 16px); border-radius: 2px; opacity: .85; }
@@ -283,9 +354,10 @@
     .span2, .t-charter { grid-column: auto; }
     .flap { width: 32px; height: 46px; font-size: 22px; }
     .cols { display: none; }
-    .drow { grid-template-columns: 1fr 104px; }
+    .drow { grid-template-columns: 1fr 116px 14px; }
     .drow .code, .drow .route { display: none; }
-    .t-pass { grid-template-columns: 1fr; }
+    .fd { padding-left: 2px; }
+    .pface { grid-template-columns: 1fr; }
     .pstub { border-left: 0; border-top: 2px dashed #b9b19c; flex-direction: row; align-items: center; gap: 14px; }
     .bar { flex: 1; }
     .celestial { width: 52px; height: 52px; right: 16px; }
@@ -294,10 +366,12 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .cloud, .flyplane, .stars i.tw, .celestial .drift, .celestial .sun,
-    .avail .p::after, .st.live::before, .wave i, .t-atc .beacon { animation: none !important; }
+    .avail .p::after, .st.live::before, .wave i, .t-atc .beacon,
+    .radar .sweep, .radar .blip { animation: none !important; }
+    .radar .sweep { display: none; }
     .flyplane { display: none; }
     .flyonce { display: none; }
-    .tile, .cta { transition: none; }
+    .tile, .cta, .pcard, .drow .chev { transition: none; }
   }
 </style>
 </head>
@@ -315,7 +389,7 @@
   <div class="flyplane fp2"><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAUCAYAAAA9djs/AAABfUlEQVR4nGNkIBL8/////+dNZnA+n/9pRmL1DmbARKzC452yKPxPG03/U901AwCIDgCriieMV64/RxEbDoFAdADgAkM9EEgKAGypgIFhaAcCxSkABoZqIOAsyVdtOYLhoTAfG0YGBgaGYx0y/3U0JbHqG2q1A0HHYgsIBgYGBpkrEVjVW1U8GV4BAAPffv4dkkmcgYGBgYudGac/CQbAoxcfhqzHGRgYGGxcwuDsI3tWMchJCKD4GWshuGrLkf+PXnz4T8jzJ85cwWrRQPOR3XVkzyo4tnEJY4D5C+Y3rCmA2Fg/ceYKg4WJDjFK6QpIcRdJtcBwA2E+NoxEFYK0CAxSUw5ysiYHwKpwdED3KouUQhVWYBFTA124epfBykiNUULB6P+LB+eI9hfdAoDYVIQeU8fO3SIp9QUFRTCQEgAspBhODiDG47iSJwMDA8OFSzeo6yA0QLMUgM/j+DyMDUxbsImoVJCV4DfwWeB/VNT/1VFZKGKkengU0BEAAETkp6rEi6PyAAAAAElFTkSuQmCC" alt=""></div>
 </div>
 
-<button class="celestial" id="celestial" aria-label="Toggle night and dawn theme" title="night / dawn">
+<button class="celestial" id="celestial" type="button" aria-label="Toggle night and dawn theme" title="night / dawn">
   <span class="drift">
     <img class="px moon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABaElEQVR4nO1WO07DQBQcUI4AUhQlOYWr5BJUnIEjcQMEFeIOdrVXACEniiKgQWnShWqt5/X77RoJikzl7868efPWBs74Y1zkPHw8tCft/uH7AwBwPa/c67oeTIkjkQWPEPOBSO4lzRUh3qRVl5J7hFxaL0by/f5rtAi3AM726fTKvejD4wvqJnTndRPw/HTPBnggYGzPAWC5mGG9qrrzeMyJYB3QyOsm9KrjQMm1awMB1pzXTUC72XXHJUhdMEOYYrmYFRFLGAjQ7Of6mgPunclvLDIGYgtK5z43G6KAnLmn5O1mJ4rgijJDmG4qGtarSgyp5KiZgXRT8YjwkgOJA9wEjA0dJX99e9cF5MDTFk+QewK8fzJW2DTym9u7HkeRAzRsHBF3jbMfEH5IPrdB/SZo0MjT6gHBAW8rUrJcclEAhdZnulnl2E5hVho/n9o4llTuFkBFRFAx2pxb5G4BkhAJHuIz/g1+AObOy+91UYsKAAAAAElFTkSuQmCC" alt="">
     <img class="px sun" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABAUlEQVR4nO1XsQ6CQAwthsSJURcT46Lfw8Bn8Dl+BgPfo4shcYGRyQmnI6W2RxsNRtO33ru+1x73AACHEn1dDH1dDJ/mrt6ztTA0nVm6dwAAJNYN1/MpOt5jeTHVVJOx8Ga/ZTld05qNqEhBXBKWjGhMjNdQenqt4pjLHRfVSTlCllcT51R8vTuwwo/7bbIHH0moTfeME8jyKqHCXAeSuLRGa1CdlySMdR8T5zh0crQ2a2BpuAE3MGsA32V8zyVgDs0BlQEcFlyUxkxwa7gGF0RpbDGga9rJndZMQuo+6IRMmA2i0IFmnFScTpALot94HUtGOFg/SBwmfPWz3P+M/hZPPHmrRiXRlbEAAAAASUVORK5CYII=" alt="">
@@ -331,7 +405,7 @@
         <span class="label"><span class="dot">●</span> Raja Bhoj Intl · BHO · Bhopal</span>
         <time id="clock">--:--:-- IST</time>
       </div>
-      <div class="flapline" id="flapline" aria-label="Pranay"></div>
+      <h1 class="flaph"><button class="flapline" id="flapline" type="button" title="Replay"><span class="sr-only">Pranay</span><span class="flaps" id="flaps" aria-hidden="true"></span></button></h1>
       <p class="role"><b>Founder and full-stack engineer.</b> I design, build, and ship complete products end to end: backend, mobile, web, deploy, launch. A crew of one, by design.</p>
       <nav class="links" aria-label="Primary links">
         <a href="https://gofloo.in" target="_blank" rel="noopener">gofloo.in ↗</a>
@@ -351,27 +425,57 @@
         <li>Backends and APIs on Django and AWS, production grade</li>
         <li>Landing pages that load fast and convert</li>
       </ul>
+      <p class="youget"><b>You get:</b> the source code, the deployment, and a clean handover. No lock-in.</p>
       <div class="avail"><span class="p"></span> Accepting 1 to 2 client projects</div>
-      <a class="cta" href="mailto:mail.pranay95@gmail.com?subject=Charter%20request%3A%20project%20inquiry">Request a quote</a>
+      <div class="ctas">
+        <a class="cta" href="mailto:mail.pranay95@gmail.com?subject=Charter%20request%3A%20project%20inquiry&amp;body=Hi%20Pranay%2C%0A%0AWhat%20I%20am%20building%3A%0APlatforms%20(iOS%20%2F%20Android%20%2F%20web%20%2F%20backend)%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0AThanks%2C">Request a quote</a>
+        <a class="cta ghost" href="#departures">See the work</a>
+      </div>
       <p class="sla">Replies within 24 hours, IST</p>
     </section>
 
     <!-- DEPARTURES -->
-    <section class="tile t-dep span2">
+    <section class="tile t-dep span2" id="departures">
       <span class="label"><span class="dot">●</span> Departures</span>
       <div class="rowsbox">
-        <div class="cols" aria-hidden="true"><span>Flight</span><span>Service</span><span>Route</span><span>Status</span></div>
-        <a class="drow" href="https://gofloo.in" target="_blank" rel="noopener">
-          <span class="code">FL·01</span><span class="name">Floo</span>
-          <span class="route">BHO → iOS / Android</span><span class="st live">In flight</span>
-        </a>
-        <a class="drow" href="https://trymurmur.in" target="_blank" rel="noopener">
-          <span class="code">MU·02</span><span class="name">Murmur</span>
-          <span class="route">BHO → macOS</span><span class="st live">In flight</span>
-        </a>
+        <div class="cols" aria-hidden="true"><span>Flight</span><span>Service</span><span>Route</span><span>Status</span><span></span></div>
+        <details class="flight">
+          <summary class="drow">
+            <span class="code">FL·01</span>
+            <span class="name">Floo <span class="desc">Verified travel companions for trips in India</span></span>
+            <span class="route">BHO → iOS / Android</span><span class="st live" data-alt="iOS·Android">In flight</span>
+            <span class="chev" aria-hidden="true">▾</span>
+          </summary>
+          <div class="fd">
+            <p>Find people to travel with on trips across India, where every user is Aadhaar-verified before they can join.</p>
+            <dl class="fdg">
+              <div><dt>Platform</dt><dd>iOS · Android</dd></div>
+              <div><dt>Verification</dt><dd>Aadhaar</dd></div>
+              <div><dt>Crew</dt><dd>One, end to end</dd></div>
+            </dl>
+            <a class="fdlink" href="https://gofloo.in" target="_blank" rel="noopener">Visit gofloo.in ↗</a>
+          </div>
+        </details>
+        <details class="flight">
+          <summary class="drow">
+            <span class="code">MU·02</span>
+            <span class="name">Murmur <span class="desc">Say the idea before it's gone</span></span>
+            <span class="route">BHO → macOS</span><span class="st live" data-alt="Free">In flight</span>
+            <span class="chev" aria-hidden="true">▾</span>
+          </summary>
+          <div class="fd">
+            <p>A floating dot on your Mac. Press ⌃⌥⌘Space, say the idea, and it lands in Apple Notes, transcribed on-device. No servers, no telemetry.</p>
+            <dl class="fdg">
+              <div><dt>Platform</dt><dd>macOS 14+ · Apple Silicon</dd></div>
+              <div><dt>Price</dt><dd>Free</dd></div>
+              <div><dt>Crew</dt><dd>One, end to end</dd></div>
+            </dl>
+            <a class="fdlink" href="https://trymurmur.in" target="_blank" rel="noopener">Visit trymurmur.in ↗</a>
+          </div>
+        </details>
         <div class="drow sched">
           <span class="code">··</span><span class="name">Next departure</span>
-          <span class="route">TBA</span><span class="st sched">Scheduled</span>
+          <span class="route">TBA</span><span class="st sched">Scheduled</span><span></span>
         </div>
       </div>
       <p class="proof">Proof of flight: <b>2 products live</b> in public app stores, built end to end by one person.</p>
@@ -381,8 +485,12 @@
     <section class="tile t-atc">
       <span class="label"><span class="dot">●</span> Ground control</span>
       <p>Every merge, deploy, release, and App Store review goes through one controller. Nothing ships without passing me, because there is no one else it could pass.</p>
-      <div class="tower"><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAA0CAYAAACdB4jyAAAA0klEQVR4nGNgGAUkgP9RUf/J1ctEicVbb9wgWy9FFuf9EhgYiykBoxaPWjz8LGZEF1DScSK7NMIH7l3Zh2IXCzZFH948o6qlAiJSGGIDFtRYfczAwMDwdr0ThCFpxsDw/BSmAiLFhQP3YTWfsI+hhmAY8PwUVkOFLToIGsnAgCNx0SKO0RPXyMvHgytVY8t31AYYiYsYgJwAsSUcYsDIi+NRi0ctHrwWf3jzjKxWy9D18ajFoxaPWjxq8ajFoxZTHRDVHialI0dsO3vkBfWoxXQDAOS7NvzeIdzcAAAAAElFTkSuQmCC" alt=""></div>
-      <span class="beacon" aria-hidden="true"></span>
+      <div class="radar" aria-hidden="true">
+        <span class="sweep"></span>
+        <span class="blip b1"><span>FL·01</span></span>
+        <span class="blip b2"><span>MU·02</span></span>
+      </div>
+      <div class="tower"><span class="beacon" aria-hidden="true"></span><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAA0CAYAAACdB4jyAAAA0klEQVR4nGNgGAUkgP9RUf/J1ctEicVbb9wgWy9FFuf9EhgYiykBoxaPWjz8LGZEF1DScSK7NMIH7l3Zh2IXCzZFH948o6qlAiJSGGIDFtRYfczAwMDwdr0ThCFpxsDw/BSmAiLFhQP3YTWfsI+hhmAY8PwUVkOFLToIGsnAgCNx0SKO0RPXyMvHgytVY8t31AYYiYsYgJwAsSUcYsDIi+NRi0ctHrwWf3jzjKxWy9D18ajFoxaPWjxq8ajFoxZTHRDVHialI0dsO3vkBfWoxXQDAOS7NvzeIdzcAAAAAElFTkSuQmCC" alt=""></div>
     </section>
 
     <!-- FLIGHT LOG -->
@@ -399,7 +507,7 @@
     <!-- RADIO -->
     <section class="tile t-radio">
       <span class="label"><span class="dot">●</span> Tower frequency · 121.5</span>
-      <div class="qwrap" id="qwrap">
+      <div class="qwrap" id="qwrap" aria-live="polite">
         <p class="q on">"Every departure on time. There is no one else to blame."</p>
         <p class="q">"Small crew. Short runway. Still climbing."</p>
         <p class="q">"Built in Bhopal. Cleared for everywhere."</p>
@@ -410,24 +518,45 @@
 
     <!-- BOARDING PASS -->
     <section class="tile t-pass span2" id="contact" aria-label="Contact">
-      <div class="pm">
-        <div class="ph"><span>Boarding pass</span><span>Gate open</span></div>
-        <p class="pname">Pranay Pratap Singh</p>
-        <dl class="pgrid">
-          <div><dt>From</dt><dd>BHO</dd></div>
-          <div><dt>To</dt><dd>Anywhere</dd></div>
-          <div><dt>Class</dt><dd>Founder</dd></div>
-        </dl>
-        <nav class="plinks" aria-label="Contact links">
-          <a href="mailto:mail.pranay95@gmail.com">email</a>
-          <a href="https://github.com/Pranay-Pratap" target="_blank" rel="noopener">github</a>
-          <a href="https://www.linkedin.com/in/pranay-pratap-s/" target="_blank" rel="noopener">linkedin</a>
-          <a href="https://x.com/PranayPratap_" target="_blank" rel="noopener">x</a>
-        </nav>
-      </div>
-      <div class="pstub">
-        <div><div class="seatl">Seat</div><div class="seat">1A</div></div>
-        <div class="bar" aria-hidden="true"></div>
+      <div class="pcard">
+        <div class="pface pfront">
+          <div class="pm">
+            <div class="ph"><span>Boarding pass</span><span>Gate open</span></div>
+            <p class="pname">Pranay Pratap Singh</p>
+            <dl class="pgrid">
+              <div><dt>From</dt><dd>BHO</dd></div>
+              <div><dt>To</dt><dd>Anywhere</dd></div>
+              <div><dt>Class</dt><dd>Founder</dd></div>
+            </dl>
+            <nav class="plinks" aria-label="Contact links">
+              <a href="mailto:mail.pranay95@gmail.com">email</a>
+              <a href="https://github.com/Pranay-Pratap" target="_blank" rel="noopener">github</a>
+              <a href="https://www.linkedin.com/in/pranay-pratap-s/" target="_blank" rel="noopener">linkedin</a>
+              <a href="https://x.com/PranayPratap_" target="_blank" rel="noopener">x</a>
+            </nav>
+          </div>
+          <div class="pstub">
+            <div><div class="seatl">Seat</div><div class="seat">1A</div></div>
+            <div class="bar" aria-hidden="true"></div>
+            <button class="flipbtn" type="button" aria-label="Flip pass: how a charter works">Flip ↻</button>
+          </div>
+        </div>
+        <div class="pface pback" inert>
+          <div class="pm">
+            <div class="ph"><span>Charter itinerary</span><span>3 legs</span></div>
+            <ol class="legs">
+              <li><span class="lg">Leg 1 · Brief</span>Tell me what you're building. I reply with scope, timeline, and a quote.</li>
+              <li><span class="lg">Leg 2 · Build</span>Frequent builds you can open and test, not a big reveal at the end.</li>
+              <li><span class="lg">Leg 3 · Launch</span>Deployed, submitted to the stores, and handed over. The code is yours.</li>
+            </ol>
+            <a class="pcta" href="mailto:mail.pranay95@gmail.com?subject=Charter%20request%3A%20project%20inquiry&amp;body=Hi%20Pranay%2C%0A%0AWhat%20I%20am%20building%3A%0APlatforms%20(iOS%20%2F%20Android%20%2F%20web%20%2F%20backend)%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0AThanks%2C">Request a quote →</a>
+          </div>
+          <div class="pstub">
+            <div><div class="seatl">Crew</div><div class="seat">1</div></div>
+            <div class="bar" aria-hidden="true"></div>
+            <button class="flipbtn" type="button" aria-label="Flip pass back to contact details">↺ Front</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -496,23 +625,28 @@
       clock.textContent = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }).format(new Date()) + " IST";
     } catch (e) { clock.textContent = ""; }
   }
-  tick(); setInterval(tick, 1000);
+  var clockTimer = null;
+  function startClock() { if (!clockTimer) { tick(); clockTimer = setInterval(tick, 1000); } }
+  function stopClock() { clearInterval(clockTimer); clockTimer = null; }
+  document.addEventListener("visibilitychange", function () { if (document.hidden) stopClock(); else startClock(); });
+  startClock();
 
   /* split-flap */
   var CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   var NAME = "PRANAY";
   var line = document.getElementById("flapline");
+  var flaps = document.getElementById("flaps");
   function buildFlaps() {
-    line.innerHTML = "";
+    flaps.innerHTML = "";
     for (var i = 0; i < NAME.length; i++) {
       var s = document.createElement("span");
       s.className = "flap blank";
       s.textContent = "\u00A0";
-      line.appendChild(s);
+      flaps.appendChild(s);
     }
   }
   function settle() {
-    Array.prototype.forEach.call(line.children, function (el, i) {
+    Array.prototype.forEach.call(flaps.children, function (el, i) {
       var target = NAME[i];
       if (reduced) { el.textContent = target; el.classList.remove("blank"); return; }
       var spins = 5 + i * 3, n = 0;
@@ -559,6 +693,45 @@
     if (!e.key || e.key.length !== 1) return;
     buf = (buf + e.key.toLowerCase()).slice(-4);
     if (buf === "floo") { egg(); }
+  });
+
+  /* status flip-board: cycle between two true statuses */
+  function flipText(el, target) {
+    var n = 0;
+    var t = setInterval(function () {
+      n++;
+      var s = "";
+      for (var i = 0; i < target.length; i++) {
+        s += (i < n - 3) ? target[i] : CHARS[Math.floor(Math.random() * CHARS.length)];
+      }
+      el.textContent = s;
+      if (n >= target.length + 3) { clearInterval(t); el.textContent = target; }
+    }, 50);
+  }
+  var sts = document.querySelectorAll(".st[data-alt]");
+  if (!reduced && sts.length) {
+    Array.prototype.forEach.call(sts, function (el) { el.setAttribute("data-a", el.textContent); });
+    var showAlt = false;
+    setInterval(function () {
+      if (document.hidden) return;
+      showAlt = !showAlt;
+      Array.prototype.forEach.call(sts, function (el, i) {
+        setTimeout(function () { flipText(el, el.getAttribute(showAlt ? "data-alt" : "data-a")); }, i * 180);
+      });
+    }, 6000);
+  }
+
+  /* boarding pass flip */
+  var pass = document.getElementById("contact");
+  var front = pass.querySelector(".pfront"), back = pass.querySelector(".pback");
+  function setFlipped(on) {
+    pass.classList.toggle("flipped", on);
+    front.inert = on;
+    back.inert = !on;
+    (on ? back : front).querySelector(".flipbtn").focus({ preventScroll: true });
+  }
+  Array.prototype.forEach.call(pass.querySelectorAll(".flipbtn"), function (b) {
+    b.addEventListener("click", function () { setFlipped(!pass.classList.contains("flipped")); });
   });
 })();
 </script>
