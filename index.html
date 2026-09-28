@@ -69,7 +69,8 @@
     --night-op: 0;
     --dawn-op: 1;
   }
-  html { scroll-padding-top: env(safe-area-inset-top, 0px); color-scheme: dark light; }
+  html { scroll-padding-top: calc(84px + env(safe-area-inset-top, 0px)); color-scheme: dark light; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   * { box-sizing: inherit; margin: 0; }
   body {
     font-family: var(--sans); font-size: 16px; line-height: 1.55;
@@ -125,6 +126,41 @@
   .celestial .sun  { opacity: var(--dawn-op); filter: drop-shadow(0 0 30px rgba(247,205,92,.55)); animation: breathe 6s ease-in-out infinite; }
   @keyframes idle { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(3px); } }
   @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+  /* top nav: amber pill slides to the section in view */
+  .topnav {
+    position: fixed; top: calc(31px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%); z-index: 30;
+    display: flex; padding: 4px; border-radius: 999px;
+    background: var(--tile); border: 1px solid var(--tile-border);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    transition: background .5s ease, border-color .5s ease;
+  }
+  .topnav a {
+    position: relative; z-index: 1; padding: 7px 14px; border-radius: 999px;
+    font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--dim); text-decoration: none; transition: color .3s ease;
+  }
+  .topnav a:hover { color: var(--ink); }
+  .topnav a[aria-current] { color: var(--btn-ink); }
+  .topnav .pill {
+    position: absolute; top: 4px; bottom: 4px; left: 0; width: 0; border-radius: 999px;
+    background: var(--amber); box-shadow: 0 4px 16px -6px rgba(242, 177, 53, .6); opacity: 0;
+  }
+  .topnav.ready .pill { transition: transform .5s cubic-bezier(.6, 0, .25, 1), width .5s cubic-bezier(.6, 0, .25, 1), opacity .3s ease; }
+
+  /* sticker tags: slapped on at a tilt */
+  .tag {
+    display: block; width: fit-content; position: relative; z-index: 1;
+    padding: 5px 10px; border-radius: 3px;
+    background: var(--amber); color: var(--btn-ink);
+    font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .55);
+    transform: rotate(var(--tilt, -3deg));
+    animation: slap .45s cubic-bezier(.3, 1.6, .5, 1) both;
+  }
+  .tag-id { margin: -9px 0 0 46px; animation-delay: 1.3s; }
+  .tag-hire { --tilt: 2deg; margin-top: 14px; margin-bottom: -2px; animation-delay: 1.5s; }
+  @keyframes slap { from { opacity: 0; transform: rotate(calc(var(--tilt, -3deg) * 3)) scale(1.35); } }
 
   /* ================= GRID ================= */
   .page { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 84px 18px 30px; }
@@ -239,7 +275,19 @@
   .st.live { color: var(--live); }
   .st.live::before { content: "●"; margin-right: 6px; font-size: 8px; vertical-align: 1px; animation: blink 2.4s infinite; }
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
-  .drow.sched, .drow.sched .name, .drow.sched .route, .st.sched { color: var(--label); }
+  .drow.next {
+    margin-top: 8px; border: 1.5px dashed color-mix(in srgb, var(--amber) 50%, transparent);
+    transition: background .2s ease, border-color .2s ease;
+  }
+  .drow.next:hover { background: color-mix(in srgb, var(--amber) 10%, transparent); border-style: solid; border-color: var(--amber); }
+  .drow.next .code, .drow.next .route { color: var(--label); }
+  .drow.next .chev { color: var(--amber); transition: transform .2s ease; }
+  .drow.next:hover .chev { transform: translateX(3px); }
+  .st.board { color: var(--amber); }
+  html[data-theme="dawn"] .drow.next { border-color: color-mix(in srgb, var(--amber-deep) 70%, transparent); }
+  html[data-theme="dawn"] .drow.next:hover { border-color: var(--amber-deep); }
+  html[data-theme="dawn"] .st.board, html[data-theme="dawn"] .drow.next .chev { color: var(--amber-deep); }
+  .st.board::before { content: "●"; margin-right: 6px; font-size: 8px; vertical-align: 1px; animation: blink 2.4s infinite; }
   .proof { margin-top: 12px; font-family: var(--mono); font-size: 11px; color: var(--dim); }
   .proof b { color: var(--amber); font-weight: 600; }
 
@@ -396,13 +444,16 @@
     .pstub { border-left: 0; border-top: 2px dashed #b9b19c; flex-direction: row; align-items: center; gap: 14px; }
     .bar { flex: 1; }
     .celestial { width: 52px; height: 52px; right: 16px; }
+    .topnav { top: calc(25px + env(safe-area-inset-top, 0px)); left: 16px; transform: none; }
+    .topnav a { padding: 7px 10px; font-size: 10px; letter-spacing: .1em; }
     .flyplane { width: 140px; }
     .fp2 { width: 96px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .cloud, .flyplane, .stars i.tw, .celestial .drift, .celestial .sun,
     .avail .p::after, .st.live::before, .wave i, .t-atc .beacon,
-    .radar .sweep, .radar .blip { animation: none !important; }
+    .radar .sweep, .radar .blip, .tag, .st.board::before { animation: none !important; }
+    .topnav.ready .pill { transition: none; }
     .radar .sweep { display: none; }
     .flyplane { display: none; }
     .flyonce { display: none; }
@@ -431,6 +482,14 @@
   </span>
 </button>
 
+<nav class="topnav" id="topnav" aria-label="Sections">
+  <span class="pill" aria-hidden="true"></span>
+  <a href="#hire">Hire</a>
+  <a href="#departures">Work</a>
+  <a href="#log">Log</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <main class="page">
   <div class="grid">
 
@@ -441,6 +500,7 @@
         <time id="clock">--:--:-- IST</time>
       </div>
       <h1 class="flaph"><button class="flapline" id="flapline" type="button" title="Replay"><span class="sr-only">Pranay</span><span class="flaps" id="flaps" aria-hidden="true"></span></button></h1>
+      <span class="tag tag-id">Crew of one</span>
       <p class="role"><b>Founder and full-stack engineer.</b> I design, build, and ship complete products end to end: backend, mobile, web, deploy, launch. A crew of one, by design.</p>
       <nav class="links" aria-label="Primary links">
         <a href="https://gofloo.in" target="_blank" rel="noopener">gofloo.in ↗</a>
@@ -452,6 +512,7 @@
     <!-- CHARTER (freelance) -->
     <section class="tile t-charter rows2" id="hire">
       <span class="label"><span class="dot">●</span> Charter services</span>
+      <span class="tag tag-hire">Now boarding</span>
       <h2>Hire the airline.</h2>
       <p class="pitch">The same hands that built and shipped two live products can build yours. One person, the output of a team.</p>
       <ul class="services">
@@ -480,10 +541,10 @@
       <div class="rowsbox">
         <div class="cols" aria-hidden="true"><span>Flight</span><span>Service</span><span>Route</span><span>Status</span><span></span></div>
         <div id="flights"></div>
-        <div class="drow sched">
-          <span class="code">··</span><span class="name">Next departure</span>
-          <span class="route">TBA</span><span class="st sched">Scheduled</span><span></span>
-        </div>
+        <a class="drow next" href="#hire">
+          <span class="code">··</span><span class="name">Your product <span class="desc">This gate is open. Book the next departure.</span></span>
+          <span class="route">? → anywhere</span><span class="st board">Boarding</span><span class="chev" aria-hidden="true">→</span>
+        </a>
       </div>
       <p class="proof">Proof of flight: <b id="livecount">2 products live</b> in public app stores, built end to end by one person.</p>
     </section>
@@ -524,7 +585,7 @@
     </section>
 
     <!-- FLIGHT LOG -->
-    <section class="tile t-log">
+    <section class="tile t-log" id="log">
       <span class="label"><span class="dot">●</span> Flight log</span>
       <ol>
         <li><span class="yr">2020</span><span class="what">Wheels up <span class="role">· B.Tech, CS</span></span></li>
@@ -815,6 +876,36 @@
       });
     }, 6000);
   }
+
+  /* top nav: pill follows the last section whose top has passed 35% of the viewport */
+  var nav = document.getElementById("topnav");
+  var pill = nav.querySelector(".pill");
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll("a"));
+  var navTargets = navLinks.map(function (a) { return document.querySelector(a.hash); });
+  function placePill() {
+    var line = window.innerHeight * 0.35, cur = -1;
+    navTargets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top <= line) cur = i; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = navLinks.length - 1;
+    navLinks.forEach(function (a, i) {
+      if (i === cur) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current");
+    });
+    if (cur < 0) { pill.style.opacity = "0"; return; }
+    var a = navLinks[cur];
+    pill.style.opacity = "1";
+    pill.style.width = a.offsetWidth + "px";
+    pill.style.transform = "translateX(" + a.offsetLeft + "px)";
+  }
+  var navQueued = false;
+  function queuePill() {
+    if (navQueued) return;
+    navQueued = true;
+    requestAnimationFrame(function () { navQueued = false; placePill(); });
+  }
+  placePill();
+  requestAnimationFrame(function () { nav.classList.add("ready"); });
+  window.addEventListener("scroll", queuePill, { passive: true });
+  window.addEventListener("resize", queuePill);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placePill);
 
   /* boarding pass flip */
   var pass = document.getElementById("contact");
