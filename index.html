@@ -1,306 +1,326 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pranay Pratap Singh | Founder and Full-Stack Product Engineer</title>
 <meta name="description" content="Pranay Pratap Singh builds and ships complete products end to end: Floo (iOS, Android) and Murmur (macOS) are live in public app stores. Open for freelance product builds.">
-<link rel="canonical" href="https://pranaypratap.vercel.app/">
-<meta name="theme-color" content="#0a0e1c">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://pranaypratap.vercel.app/">
 <meta property="og:title" content="Pranay Pratap Singh | Founder and Full-Stack Product Engineer">
 <meta property="og:description" content="Two products live in public app stores, built end to end by one person. Open for freelance product builds.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pranaypratap.vercel.app/">
 <meta property="og:image" content="https://pranaypratap.vercel.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Split-flap board spelling PRANAY against a night sky. Founder and full-stack engineer.">
+<meta property="og:image:alt" content="Pranay Pratap Singh, founder and full-stack product engineer. 2 products live in public app stores.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@PranayPratap_">
 <meta name="twitter:title" content="Pranay Pratap Singh | Founder and Full-Stack Product Engineer">
 <meta name="twitter:description" content="Two products live in public app stores, built end to end by one person. Open for freelance product builds.">
 <meta name="twitter:image" content="https://pranaypratap.vercel.app/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23161a26'/%3E%3Ctext x='16' y='24' font-family='monospace' font-weight='700' font-size='22' fill='%23f2b135' text-anchor='middle'%3EP%3C/text%3E%3Crect y='15.5' width='32' height='1' fill='%23000' opacity='.7'/%3E%3C/svg%3E">
-<script>
-  /* set theme before first paint: saved choice, else IST daytime = dawn */
-  (function () {
-    var t = null;
-    try { t = localStorage.getItem("pn-theme"); } catch (e) {}
-    if (t !== "night" && t !== "dawn") {
-      var h = 22;
-      try { h = parseInt(new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Kolkata", hour: "2-digit", hour12: false }).format(new Date()), 10); } catch (e) {}
-      t = (h >= 6 && h < 18) ? "dawn" : "night";
-    }
-    document.documentElement.setAttribute("data-theme", t);
-  })();
-</script>
+<link rel="canonical" href="https://pranaypratap.vercel.app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080808'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='38' font-weight='bold' fill='%23e8a33d' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#080808">
+<link rel="preload" as="image" href="pranay.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     box-sizing: border-box;
-    --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
-    --amber: #f2b135;
-    --amber-hover: #ffc14e;
-    --btn-ink: #17120a;
-    /* night */
-    --bg: #0a0e1c;
-    --bg-grad: linear-gradient(180deg, #090d1c 0%, #0f1732 55%, #1b2544 100%);
-    --surface: rgba(14, 18, 32, .78);
-    --line: #1d2436;
-    --line-strong: #2c3550;
-    --ink: #eae6da;
-    --muted: #9aa3b3;
-    --faint: #7e889a;
-    --accent: #f2b135;
-    --accent-soft: rgba(242, 177, 53, .13);
-    --live: #71d69a;
-    --header: rgba(10, 14, 28, .82);
-  }
-  html[data-theme="dawn"] {
-    --bg: #f4eee1;
-    --bg-grad: linear-gradient(180deg, #f7f2e7 0%, #f1e9d8 100%);
-    --surface: rgba(255, 251, 242, .85);
-    --line: #e2d6bd;
-    --line-strong: #cdbd9c;
-    --ink: #2a2318;
-    --muted: #5f5547;
-    --faint: #74695b;
-    --accent: #8c5f0b;
-    --accent-soft: rgba(201, 141, 30, .14);
-    --live: #2a7347;
-    --header: rgba(244, 238, 225, .85);
+    color-scheme: dark;
+    --bg: #080808;
+    --cream: #F4EDE4;
+    --mid: #a0a0a0;
+    --muted: #6a6a6a;
+    --amber: #e8a33d;
+    --amber-line: rgba(232, 163, 61, 0.16);
+    --amber-dim: rgba(232, 163, 61, 0.12);
+    --amber-glow: rgba(232, 163, 61, 0.06);
+    --green: #6bcb77;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Outfit", "Helvetica Neue", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+    --dur: 0.55s;
   }
   * { box-sizing: inherit; margin: 0; }
-  html { scroll-padding-top: calc(80px + env(safe-area-inset-top, 0px)); color-scheme: dark light; }
-  html[data-theme="night"] { color-scheme: dark; }
-  html[data-theme="dawn"] { color-scheme: light; }
-  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(84px + env(safe-area-inset-top, 0px)); }
   body {
-    min-height: 100vh;
-    background: var(--bg-grad) fixed, var(--bg);
-    color: var(--ink);
+    background: var(--bg);
+    color: var(--cream);
     font-family: var(--sans);
-    font-size: 17px;
-    line-height: 1.65;
+    font-weight: 300;
+    font-size: 16.5px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    transition: color .4s ease, background-color .4s ease;
+    overflow-x: hidden;
   }
   a { color: inherit; text-decoration: none; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 3px; }
-  .wrap {
-    max-width: 840px; margin: 0 auto;
-    padding-left: max(22px, env(safe-area-inset-left, 0px));
-    padding-right: max(22px, env(safe-area-inset-right, 0px));
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 2px; }
+  ::selection { background: var(--amber); color: #171107; }
+
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+  /* micro label: the system's signature */
+  .lbl {
+    font-family: var(--mono); font-weight: 400;
+    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--muted);
   }
-  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .lbl .tick { color: var(--amber); }
 
-  /* load reveal: one orchestrated moment */
-  .rv { opacity: 0; transform: translateY(14px); animation: rv .7s cubic-bezier(.2,.7,.2,1) forwards; }
-  .d1 { animation-delay: .05s; } .d2 { animation-delay: .15s; } .d3 { animation-delay: .25s; }
-  .d4 { animation-delay: .35s; } .d5 { animation-delay: .45s; }
-  @keyframes rv { to { opacity: 1; transform: none; } }
+  /* reveals */
+  .rv { opacity: 0; transform: translateY(26px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .rv { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+    .marquee-track { animation: none !important; transform: none !important; }
+    .pulse::after { animation: none !important; }
+  }
 
-  /* header */
+  /* ============ NAV ============ */
   header {
-    position: sticky; top: 0; z-index: 10;
-    background: var(--header);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(8, 8, 8, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(244, 237, 228, 0.07);
     padding-top: env(safe-area-inset-top, 0px);
-    transition: background .4s ease, border-color .4s ease;
   }
-  .nav { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-top: 14px; padding-bottom: 14px; }
-  .nav .name { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
-  .mono-p {
-    position: relative; display: inline-flex; align-items: center; justify-content: center;
-    width: 24px; height: 30px; border-radius: 4px;
-    background: linear-gradient(180deg, #161a26 0 49.5%, #0d1019 50.5% 100%);
-    border: 1px solid #262d40;
-    font-family: var(--mono); font-weight: 600; font-size: 16px; color: var(--amber);
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; }
+  .nav .sig { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.15rem; letter-spacing: 0.01em; }
+  .nav .sig em { color: var(--amber); font-style: italic; }
+  .nav nav { display: flex; gap: 28px; }
+  .nav nav a {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--mid); transition: color var(--dur) var(--ease);
   }
-  .mono-p::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #000; opacity: .7; }
-  .nav nav { display: flex; gap: 22px; font-size: 14.5px; color: var(--muted); }
-  .nav nav a:hover { color: var(--ink); }
-  .nav .right { display: flex; align-items: center; gap: 10px; }
-  .theme-btn {
-    width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line);
-    background: transparent; color: var(--ink); cursor: pointer;
-    display: inline-flex; align-items: center; justify-content: center;
-    transition: border-color .2s ease;
-  }
-  .theme-btn:hover { border-color: var(--amber); }
-  .theme-btn svg { width: 17px; height: 17px; }
-  html[data-theme="night"] .theme-btn .sun, html[data-theme="dawn"] .theme-btn .moon { display: none; }
+  .nav nav a:hover { color: var(--amber); }
   .nav .mail {
-    font-size: 14px; font-weight: 600; color: var(--btn-ink);
-    background: var(--amber); padding: 8px 14px; border-radius: 8px;
-    transition: background .2s ease;
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream); border: 1px solid var(--amber-line); border-radius: 999px;
+    padding: 9px 18px; transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease);
   }
-  .nav .mail:hover { background: var(--amber-hover); }
+  .nav .mail:hover { border-color: var(--amber); background: var(--amber-dim); }
 
-  /* status */
-  .status {
-    margin-top: 54px;
-    display: inline-flex; align-items: center; gap: 10px;
-    border: 1px solid color-mix(in srgb, var(--amber) 45%, var(--line));
-    background: var(--accent-soft);
-    border-radius: 999px; padding: 7px 15px;
-    font-size: 14px; color: var(--ink);
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    display: grid; grid-template-columns: 1.25fr 0.9fr; gap: 56px; align-items: center;
+    padding: 96px 0 72px;
   }
-  .pulse { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--live); flex: none; }
-  .pulse::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--live); animation: ping 2.4s cubic-bezier(0,0,.2,1) infinite; }
-  @keyframes ping { 75%, 100% { transform: scale(2.2); opacity: 0; } }
+  .hero-bg {
+    position: absolute; inset: -40% -30% auto; height: 120%;
+    background: radial-gradient(ellipse 50% 40% at 70% 30%, var(--amber-glow), transparent 70%);
+    pointer-events: none;
+  }
+  .eyebrow { display: flex; align-items: center; gap: 10px; }
+  .eyebrow .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); }
+  h1.name {
+    margin-top: 26px;
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(3rem, 7.6vw, 5.4rem);
+    line-height: 1.02; letter-spacing: -0.015em;
+  }
+  h1.name .it { display: block; font-style: italic; color: var(--amber); font-weight: 400; }
+  .hero-role { margin-top: 22px; font-size: 1.1rem; font-weight: 300; color: var(--mid); max-width: 44ch; }
+  .hero-role strong { color: var(--cream); font-weight: 500; }
+  .hero-actions { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 15px 26px; border-radius: 999px; cursor: pointer;
+    transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+  .btn-fill { background: var(--amber); color: #171107; border: 1px solid var(--amber); font-weight: 500; }
+  .btn-fill:hover { transform: translateY(-2px); background: #f3b355; }
+  .btn-ghost { background: transparent; color: var(--cream); border: 1px solid rgba(244, 237, 228, 0.18); }
+  .btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
 
-  /* hero */
-  .hero { padding-top: 8px; }
-  .hero h1 {
-    font-size: clamp(42px, 7.4vw, 72px);
-    font-weight: 900; letter-spacing: -0.035em; line-height: 1.02;
+  /* identity card */
+  .id-card {
+    position: relative;
+    background: linear-gradient(160deg, rgba(244, 237, 228, 0.045), rgba(244, 237, 228, 0.015));
+    border: 1px solid rgba(244, 237, 228, 0.1);
+    border-radius: 18px; padding: 26px 26px 22px;
+  }
+  .bracket { position: absolute; width: 18px; height: 18px; border-color: var(--amber); border-style: solid; border-width: 0; opacity: 0.85; }
+  .b-tl { top: -1px; left: -1px; border-top-width: 2px; border-left-width: 2px; border-top-left-radius: 18px; }
+  .b-tr { top: -1px; right: -1px; border-top-width: 2px; border-right-width: 2px; border-top-right-radius: 18px; }
+  .b-bl { bottom: -1px; left: -1px; border-bottom-width: 2px; border-left-width: 2px; border-bottom-left-radius: 18px; }
+  .b-br { bottom: -1px; right: -1px; border-bottom-width: 2px; border-right-width: 2px; border-bottom-right-radius: 18px; }
+  .id-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .id-status { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); }
+  .pulse { position: relative; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+  .pulse::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--green); animation: ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite; }
+  @keyframes ping { 75%, 100% { transform: scale(2.4); opacity: 0; } }
+  .id-photo {
+    margin-top: 22px; position: relative; border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--amber-line); aspect-ratio: 4 / 5;
+    background: #1c1114;
+  }
+  .id-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .id-photo .ov {
+    position: absolute; inset: auto 0 0 0; padding: 38px 16px 14px;
+    background: linear-gradient(180deg, transparent, rgba(8, 8, 8, 0.82));
+  }
+  .id-photo .ov p { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; color: var(--cream); line-height: 1.2; }
+  .id-photo .ov em { color: var(--amber); }
+  .id-tag { margin-top: 14px; text-align: center; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .id-stats { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(244, 237, 228, 0.09); padding-top: 18px; gap: 8px; }
+  .id-stat { text-align: center; }
+  .id-val { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; color: var(--cream); line-height: 1.1; }
+  .id-val span { color: var(--amber); }
+  .id-lbl { margin-top: 4px; font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); line-height: 1.5; }
+
+  /* ============ MARQUEE ============ */
+  .marquee {
+    border-top: 1px solid var(--amber-line); border-bottom: 1px solid var(--amber-line);
+    overflow: hidden; white-space: nowrap; padding: 15px 0;
+    background: var(--amber-glow);
+  }
+  .marquee-track { display: inline-block; animation: marquee 32s linear infinite; }
+  .marquee span {
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mid); margin: 0 1.6rem;
+  }
+  .marquee span.a { color: var(--amber); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ============ SECTIONS ============ */
+  section { padding-top: 110px; }
+  .sec-eyebrow { display: flex; align-items: center; gap: 12px; }
+  .sec-eyebrow .line { flex: 0 0 34px; height: 1px; background: var(--amber); }
+  h2.sec {
     margin-top: 18px;
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.12; letter-spacing: -0.01em;
   }
-  .hero .role { margin-top: 12px; font-size: clamp(18px, 2.6vw, 22px); color: var(--muted); font-weight: 500; letter-spacing: -0.01em; }
-  .hero .intro { margin-top: 22px; max-width: 62ch; color: var(--muted); }
-  .hero .intro strong { color: var(--ink); font-weight: 600; }
-  .hero .intro a { color: var(--ink); border-bottom: 1px solid var(--faint); }
-  .hero .intro a:hover { border-color: var(--amber); }
-  .chips { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip {
-    font-family: var(--mono); font-size: 12.5px; color: var(--muted);
-    border: 1px solid var(--line); background: var(--surface);
-    padding: 5px 11px; border-radius: 7px;
-  }
+  h2.sec em { font-style: italic; color: var(--amber); font-weight: 400; }
+  .sec-sub { margin-top: 14px; color: var(--mid); max-width: 58ch; font-weight: 300; }
 
-  /* metrics */
-  .metrics {
-    margin-top: 44px; padding: 26px 0;
-    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
-  }
-  .metric .n { font-family: var(--mono); font-size: clamp(28px, 4.4vw, 40px); font-weight: 500; line-height: 1.1; color: var(--accent); }
-  .metric .l { margin-top: 6px; font-size: 13.5px; color: var(--faint); line-height: 1.45; }
+  /* about */
+  .about-grid { margin-top: 44px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: start; }
+  .about-body { color: var(--mid); font-weight: 300; }
+  .about-body p + p { margin-top: 14px; }
+  .about-body strong { color: var(--cream); font-weight: 500; }
+  .pillars { display: grid; gap: 1px; background: rgba(244, 237, 228, 0.09); border: 1px solid rgba(244, 237, 228, 0.09); border-radius: 16px; overflow: hidden; }
+  .pillar { background: var(--bg); padding: 22px 24px; display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: baseline; }
+  .pillar .num { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--amber); }
+  .pillar h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; }
+  .pillar p { margin-top: 5px; font-size: 0.88rem; color: var(--mid); }
 
-  /* sections */
-  section { padding-top: 76px; }
-  .eyebrow { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); }
-  .eyebrow::before { content: "● "; color: var(--amber); }
-  .sec-h { margin-top: 8px; font-size: clamp(26px, 3.6vw, 34px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; }
-  .sec-sub { margin-top: 8px; color: var(--muted); max-width: 60ch; }
-  .card { border: 1px solid var(--line); background: var(--surface); transition: border-color .25s ease, background .4s ease; }
+  /* process */
+  .steps { margin-top: 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(244, 237, 228, 0.09); border: 1px solid rgba(244, 237, 228, 0.09); border-radius: 16px; overflow: hidden; }
+  .step { background: var(--bg); padding: 24px 22px; }
+  .step .num { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--amber); }
+  .step h3 { margin-top: 10px; font-family: var(--serif); font-size: 1.15rem; font-weight: 500; }
+  .step p { margin-top: 6px; font-size: 0.86rem; color: var(--mid); }
+
+  /* lab */
+  .lab-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .lab {
+    border: 1px solid rgba(244, 237, 228, 0.09); border-radius: 16px; padding: 24px 26px;
+    background: linear-gradient(170deg, rgba(244, 237, 228, 0.03), rgba(244, 237, 228, 0.006));
+    transition: border-color var(--dur) var(--ease);
+    display: block;
+  }
+  .lab:hover { border-color: var(--amber-line); }
+  .lab-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .lab h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; }
+  .lab .tag { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); border: 1px solid rgba(244, 237, 228, 0.14); border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+  .lab .tag.live { color: var(--green); border-color: rgba(107, 203, 119, 0.35); }
+  .lab p { margin-top: 8px; font-size: 0.9rem; color: var(--mid); }
 
   /* work */
-  .work-item { margin-top: 30px; padding: 28px; border-radius: 14px; }
-  .work-item:hover { border-color: var(--line-strong); }
-  .work-top { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-  .work-item h3 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 700; letter-spacing: -0.02em; }
-  .live { font-family: var(--mono); font-size: 12.5px; color: var(--live); }
-  .live::before { content: "●"; font-size: 8px; margin-right: 7px; vertical-align: 2px; }
-  .work-item .what { margin-top: 10px; color: var(--muted); max-width: 62ch; }
-  .facts { margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px 20px; }
-  .facts dt { font-size: 12.5px; color: var(--faint); }
-  .facts dd { margin: 2px 0 0; font-family: var(--mono); font-size: 14px; color: var(--ink); }
-  .work-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
-  .wlink {
-    font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 8px;
-    border: 1px solid var(--line); color: var(--ink);
-    transition: border-color .2s ease, background .2s ease;
+  .case {
+    margin-top: 44px; position: relative;
+    border: 1px solid rgba(244, 237, 228, 0.09); border-radius: 18px;
+    padding: 36px 38px;
+    background: linear-gradient(170deg, rgba(244, 237, 228, 0.035), rgba(244, 237, 228, 0.008));
+    transition: border-color var(--dur) var(--ease);
   }
-  .wlink:hover { border-color: var(--amber); background: var(--accent-soft); }
-
-  .fixes { margin-top: 30px; padding: 22px 28px; border-radius: 14px; }
-  .fixes h3 { font-size: 15px; font-weight: 600; }
-  .fixes ul { list-style: none; padding: 0; margin-top: 10px; }
-  .fixes li { display: grid; grid-template-columns: 190px 1fr; gap: 16px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
-  .fixes li b { font-weight: 600; }
-  .fixes li span { color: var(--muted); }
-  .fixes li b::before { content: "✓ "; color: var(--live); }
-  .also { margin-top: 22px; color: var(--faint); font-size: 14.5px; }
-  .also a { color: var(--muted); border-bottom: 1px solid var(--line-strong); }
-  .also a:hover { color: var(--ink); border-color: var(--amber); }
+  .case:hover { border-color: var(--amber-line); }
+  .case-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .case h3 { font-family: var(--serif); font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 500; }
+  .case h3 em { font-style: italic; color: var(--amber); font-weight: 400; }
+  .case .live { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); }
+  .case .what { margin-top: 14px; color: var(--mid); max-width: 60ch; }
+  .facts { margin-top: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px 22px; border-top: 1px solid rgba(244, 237, 228, 0.08); padding-top: 22px; }
+  .fact .fl { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .fact .fv { margin-top: 5px; font-size: 0.92rem; font-weight: 400; color: var(--cream); }
+  .case-links { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cream); border: 1px solid rgba(244, 237, 228, 0.16); border-radius: 999px;
+    padding: 10px 18px;
+    transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+  .pill:hover { border-color: var(--amber); background: var(--amber-dim); color: var(--amber); }
+  .also { margin-top: 28px; color: var(--muted); font-size: 0.92rem; }
+  .also a { color: var(--mid); border-bottom: 1px solid rgba(244, 237, 228, 0.2); transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+  .also a:hover { color: var(--amber); border-color: var(--amber); }
 
   /* services */
-  .svc-grid { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .svc { border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; }
-  .svc:hover { border-color: var(--line-strong); }
-  .svc h3 { font-size: 17px; font-weight: 600; }
-  .svc p { margin-top: 6px; font-size: 14.5px; color: var(--muted); }
-  .svc .from { margin-top: auto; padding-top: 12px; font-family: var(--mono); font-size: 12.5px; color: var(--accent); }
-  .terms { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; color: var(--muted); }
-  .terms span::before { content: "▪ "; color: var(--amber); font-size: 10px; vertical-align: 2px; }
-  .steps { margin-top: 34px; list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: step; }
-  .steps li { border-top: 2px solid var(--amber); padding-top: 12px; font-size: 14.5px; color: var(--muted); }
-  .steps li b { display: block; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); margin-bottom: 4px; }
-  .svc-cta { margin-top: 30px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: inherit; font-size: 15px; font-weight: 600; padding: 12px 20px; border-radius: 9px;
-    background: var(--amber); color: var(--btn-ink); border: 1px solid transparent; cursor: pointer;
-    box-shadow: 0 6px 24px -10px rgba(242, 177, 53, .6);
-    transition: transform .15s ease, background .2s ease;
-  }
-  .btn:hover { background: var(--amber-hover); transform: translateY(-1px); }
-  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); box-shadow: none; }
-  .btn.ghost:hover { border-color: var(--amber); background: var(--accent-soft); transform: none; }
-  .handover { margin-top: 16px; font-size: 14px; color: var(--faint); }
+  .svc-grid { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(244, 237, 228, 0.09); border: 1px solid rgba(244, 237, 228, 0.09); border-radius: 18px; overflow: hidden; }
+  .svc { background: var(--bg); padding: 30px 32px; transition: background var(--dur) var(--ease); }
+  .svc:hover { background: #0d0c0a; }
+  .svc .num { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--amber); }
+  .svc h3 { margin-top: 12px; font-family: var(--serif); font-size: 1.35rem; font-weight: 500; }
+  .svc p { margin-top: 8px; font-size: 0.92rem; color: var(--mid); }
+  .terms { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px 30px; }
+  .terms span { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); }
+  .terms span::before { content: "▪ "; color: var(--amber); }
+  .svc-cta { margin-top: 32px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .copied { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.12em; color: var(--green); opacity: 0; transition: opacity 0.3s var(--ease); }
+  .copied.on { opacity: 1; }
 
   /* experience */
-  .xp { margin-top: 26px; padding: 0; }
-  .xp li {
-    list-style: none; display: grid; grid-template-columns: 150px 1fr; gap: 20px;
-    padding: 20px 0; border-top: 1px solid var(--line);
-  }
-  .xp li:last-child { border-bottom: 1px solid var(--line); }
-  .xp .when { font-family: var(--mono); font-size: 13px; color: var(--faint); padding-top: 3px; }
-  .xp h3 { font-size: 17px; font-weight: 600; }
-  .xp .now h3 { color: var(--accent); }
-  .xp p { margin-top: 5px; font-size: 14.5px; color: var(--muted); max-width: 58ch; }
+  .xp { margin-top: 36px; list-style: none; padding: 0; }
+  .xp li { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 26px 0; border-top: 1px solid rgba(244, 237, 228, 0.08); align-items: baseline; }
+  .xp li:last-child { border-bottom: 1px solid rgba(244, 237, 228, 0.08); }
+  .xp .when { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding-top: 5px; }
+  .xp h3 { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; }
+  .xp .now h3 em { font-style: italic; color: var(--amber); font-weight: 400; }
+  .xp p { margin-top: 6px; font-size: 0.92rem; color: var(--mid); max-width: 58ch; }
 
   /* contact */
-  .contact { padding-bottom: 20px; }
-  .email-row { margin-top: 26px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .contact { padding-bottom: 30px; }
+  .contact-big {
+    margin-top: 20px;
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.12; letter-spacing: -0.01em;
+    max-width: 16ch;
+  }
+  .contact-big em { font-style: italic; color: var(--amber); font-weight: 400; }
+  .email-row { margin-top: 34px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .email {
-    font-family: var(--mono); font-size: clamp(16px, 3vw, 21px); color: var(--ink);
-    border-bottom: 1px solid var(--faint); padding-bottom: 2px; margin-right: 4px;
+    font-family: var(--mono); font-size: clamp(0.85rem, 2.4vw, 1.05rem); color: var(--cream);
+    border-bottom: 1px solid rgba(244, 237, 228, 0.25); padding-bottom: 3px;
+    transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
   }
-  .email:hover { border-color: var(--amber); }
-  .copied { font-size: 13.5px; color: var(--live); min-width: 4em; }
-  .soc { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
-  .soc a {
-    font-size: 14px; color: var(--muted); border: 1px solid var(--line);
-    padding: 8px 14px; border-radius: 8px;
-    transition: color .2s ease, border-color .2s ease;
-  }
-  .soc a:hover { color: var(--ink); border-color: var(--amber); }
+  .email:hover { color: var(--amber); border-color: var(--amber); }
+  .soc { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
 
-  footer { margin-top: 80px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--faint); }
+  footer { margin-top: 100px; border-top: 1px solid rgba(244, 237, 228, 0.08); }
   .foot-in {
-    padding-top: 24px; padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+    padding: 26px 24px calc(30px + env(safe-area-inset-bottom, 0px));
     display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 880px) {
+    .hero { grid-template-columns: 1fr; gap: 44px; padding-top: 64px; }
+    .hero-right { max-width: 400px; }
     .nav nav { display: none; }
-  }
-  @media (max-width: 640px) {
-    .metrics { grid-template-columns: 1fr; gap: 20px; }
-    .metric { display: flex; align-items: baseline; gap: 14px; }
-    .metric .l { margin-top: 0; }
-    .svc-grid, .steps { grid-template-columns: 1fr; }
-    .xp li, .fixes li { grid-template-columns: 1fr; gap: 4px; }
-    .work-item { padding: 22px 18px; }
-    .fixes { padding: 18px; }
-    .nav .mail { padding: 8px 11px; }
-  }
-  @media (max-width: 380px) {
-    .nav .name .full { display: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .rv { animation: none; opacity: 1; transform: none; }
-    .pulse::after { animation: none; }
-    .btn, .card, body, header { transition: none; }
+    .svc-grid { grid-template-columns: 1fr; }
+    .xp li { grid-template-columns: 1fr; gap: 6px; }
+    .case { padding: 28px 22px; }
+    .about-grid { grid-template-columns: 1fr; gap: 30px; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .lab-grid { grid-template-columns: 1fr; }
+    section { padding-top: 84px; }
   }
 </style>
 </head>
@@ -308,242 +328,319 @@
 
 <header>
   <div class="wrap nav">
-    <a class="name" href="#top"><span class="mono-p" aria-hidden="true">P</span><span class="full">Pranay Pratap Singh</span></a>
+    <a class="sig" href="#top">Pranay <em>P.</em> Singh</a>
     <nav aria-label="Sections">
+      <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#services">Services</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="right">
-      <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch between night and dawn theme" title="night / dawn">
-        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-      <a class="mail" href="mailto:mail.pranay95@gmail.com">Email me</a>
-    </div>
+    <a class="mail" href="mailto:mail.pranay95@gmail.com">Email me</a>
   </div>
 </header>
 
-<main class="wrap" id="top">
-
-  <p class="status rv d1"><span class="pulse" aria-hidden="true"></span> Open for freelance product builds. Taking 1 to 2 client projects.</p>
-
-  <section class="hero">
-    <h1 class="rv d2">Pranay Pratap Singh</h1>
-    <p class="role rv d2">Founder and full-stack product engineer</p>
-    <p class="intro rv d3">I design, build, and ship complete products end to end: backend, mobile, web, deploy, launch. Two of them are live in public app stores, <strong>built entirely by one person</strong>. Founder of <a href="https://gofloo.in" target="_blank" rel="noopener">Gofloo Tech</a>, a DPIIT-recognized startup. Based in Bhopal, India, working with clients anywhere.</p>
-    <div class="chips rv d4">
-      <span class="chip">Python / Django / DRF</span>
-      <span class="chip">AWS</span>
-      <span class="chip">React Native / Expo</span>
-      <span class="chip">React / Vite</span>
-      <span class="chip">TypeScript</span>
-    </div>
-  </section>
-
-  <div class="metrics rv d5">
-    <div class="metric">
-      <p class="n">2</p>
-      <p class="l">products live in public app stores, built end to end</p>
-    </div>
-    <div class="metric">
-      <p class="n">3</p>
-      <p class="l">platforms shipped: iOS, Android, macOS</p>
-    </div>
-    <div class="metric">
-      <p class="n">5+</p>
-      <p class="l">years writing production software</p>
-    </div>
+<main id="top">
+  <div class="wrap">
+    <section class="hero" style="padding-top: 72px;">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-left">
+        <div class="eyebrow rv">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="lbl" style="color: var(--mid);">Founder and full-stack product engineer · Bhopal, India</span>
+        </div>
+        <h1 class="name rv">Pranay <span class="it">Pratap Singh</span></h1>
+        <p class="hero-role rv">I design, build, and ship complete products end to end: backend, mobile, web, deploy, launch. <strong>Two of them are live in public app stores, built entirely by one person.</strong></p>
+        <div class="hero-actions rv">
+          <a class="btn btn-fill" href="#work">View my work</a>
+          <a class="btn btn-ghost" href="mailto:mail.pranay95@gmail.com?subject=Project%20inquiry">Request a quote</a>
+        </div>
+      </div>
+      <div class="hero-right rv">
+        <div class="id-card">
+          <span class="bracket b-tl" aria-hidden="true"></span>
+          <span class="bracket b-tr" aria-hidden="true"></span>
+          <span class="bracket b-bl" aria-hidden="true"></span>
+          <span class="bracket b-br" aria-hidden="true"></span>
+          <div class="id-head">
+            <span class="lbl">Founder profile</span>
+            <span class="id-status"><span class="pulse" aria-hidden="true"></span> Available</span>
+          </div>
+          <div class="id-photo">
+            <img src="pranay.jpg" alt="Pranay Pratap Singh" width="880" height="1100" decoding="async" fetchpriority="high">
+            <div class="ov"><p>Pranay <em>Pratap Singh</em></p></div>
+          </div>
+          <p class="id-tag">Gofloo Tech · DPIIT recognized</p>
+          <div class="id-stats">
+            <div class="id-stat"><div class="id-val" data-count="2">0</div><div class="id-lbl">Products live in app stores</div></div>
+            <div class="id-stat"><div class="id-val" data-count="3">0</div><div class="id-lbl">Platforms: iOS, Android, macOS</div></div>
+            <div class="id-stat"><div class="id-val" data-count="5" data-suffix="+">0</div><div class="id-lbl">Years in production software</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <section id="work">
-    <p class="eyebrow">Work</p>
-    <h2 class="sec-h">Selected work</h2>
-    <p class="sec-sub">Complete products, not contributions. On each of these I was the backend, the mobile team, the web team, and the release manager.</p>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="mq"></div>
+  </div>
 
-    <article class="card work-item">
-      <div class="work-top">
-        <h3>Floo</h3>
-        <span class="live">Live on iOS and Android</span>
+  <div class="wrap">
+    <section id="about">
+      <div class="sec-eyebrow rv"><span class="line" aria-hidden="true"></span><span class="lbl">About</span></div>
+      <h2 class="sec rv">The person <em>behind the products.</em></h2>
+      <div class="about-grid">
+        <div class="about-body rv">
+          <p>I started as a backend engineer, building production systems at DXC Technology and Quantive. In 2023 I left to build my own products, and found out I could carry the whole thing alone: <strong>design, backend, mobile apps, web, infrastructure, and the app store releases at the end.</strong></p>
+          <p>Gofloo Tech, my DPIIT-recognized startup in Bhopal, is where that happens daily. Floo and Murmur went from idea to live products without a team behind them, which means every decision you see in them, from the database schema to the onboarding copy, passed through one pair of hands.</p>
+          <p>That is exactly what clients hire: no handoffs, no coordination tax, no "the backend guy says". One person who has shipped before and owns the result.</p>
+        </div>
+        <div class="pillars rv">
+          <div class="pillar">
+            <span class="num">01</span>
+            <div><h3>End to end, literally</h3><p>Backend, apps, web, deploys, store reviews. The whole aircraft, one builder.</p></div>
+          </div>
+          <div class="pillar">
+            <span class="num">02</span>
+            <div><h3>Product thinking included</h3><p>I build as an owner: scope ruthlessly, ship weekly, cut what users will not notice.</p></div>
+          </div>
+          <div class="pillar">
+            <span class="num">03</span>
+            <div><h3>Production discipline</h3><p>Documented code, clean handover, releases that survive app store review.</p></div>
+          </div>
+        </div>
       </div>
-      <p class="what">A trust-first travel companion app where travelers find their people. Every user is Aadhaar-verified before they can join, then matched for trips and group travel across India.</p>
-      <dl class="facts">
-        <div><dt>Role</dt><dd>Founder, built everything</dd></div>
-        <div><dt>Backend</dt><dd>Django / DRF on AWS</dd></div>
-        <div><dt>Apps</dt><dd>React Native / Expo</dd></div>
-        <div><dt>Shipping since</dt><dd>2023</dd></div>
-      </dl>
-      <div class="work-links">
-        <a class="wlink" href="https://apps.apple.com/in/app/floo-travel-companion-app/id6757790079" target="_blank" rel="noopener">App Store</a>
-        <a class="wlink" href="https://play.google.com/store/apps/details?id=com.floo.go" target="_blank" rel="noopener">Google Play</a>
-        <a class="wlink" href="https://gofloo.in" target="_blank" rel="noopener">gofloo.in</a>
-      </div>
-    </article>
+    </section>
 
-    <article class="card work-item">
-      <div class="work-top">
-        <h3>Murmur</h3>
-        <span class="live">Live on the Mac App Store</span>
-      </div>
-      <p class="what">A voice-capture app for macOS. A floating dot sits on your screen; press ⌃⌥⌘Space, say the idea, and it lands in Apple Notes, transcribed on-device. No servers, no telemetry.</p>
-      <dl class="facts">
-        <div><dt>Role</dt><dd>Built everything</dd></div>
-        <div><dt>Platform</dt><dd>macOS 14+, Apple Silicon</dd></div>
-        <div><dt>Distribution</dt><dd>Mac App Store</dd></div>
-        <div><dt>Price</dt><dd>Free</dd></div>
-      </dl>
-      <div class="work-links">
-        <a class="wlink" href="https://apps.apple.com/us/app/murmur-just-say-it/id6806840357?mt=12" target="_blank" rel="noopener">Mac App Store</a>
-        <a class="wlink" href="https://trymurmur.in" target="_blank" rel="noopener">trymurmur.in</a>
-      </div>
-    </article>
+    <section id="work">
+      <div class="sec-eyebrow rv"><span class="line" aria-hidden="true"></span><span class="lbl">Selected work</span></div>
+      <h2 class="sec rv">Complete products, <em>not contributions.</em></h2>
+      <p class="sec-sub rv">On each of these I was the backend, the mobile team, the web team, and the release manager.</p>
 
-    <div class="card fixes">
-      <h3>Recently fixed in production</h3>
-      <ul>
-        <li><b>Android SDK 36 migration</b><span>Upgraded to Expo SDK 54 and React Native 0.81, fixed a runtime crash, shipped to Play before the deadline.</span></li>
-        <li><b>Security audit</b><span>Rotated all production credentials, closed a token leak in server logs, hardened S3 storage.</span></li>
-        <li><b>Analytics rebuild</b><span>Rebuilt funnel, acceptance rate, and retention metrics so the numbers could be trusted.</span></li>
+      <article class="case rv">
+        <div class="case-top">
+          <h3>Floo</h3>
+          <span class="live"><span class="pulse" aria-hidden="true"></span> Live on iOS and Android</span>
+        </div>
+        <p class="what">A trust-first travel companion app where travelers find their people. Government ID verification, matching, and group travel, built for India.</p>
+        <div class="facts">
+          <div class="fact"><p class="fl">Role</p><p class="fv">Founder, built everything</p></div>
+          <div class="fact"><p class="fl">Backend</p><p class="fv">Django / DRF on AWS</p></div>
+          <div class="fact"><p class="fl">Apps</p><p class="fv">React Native / Expo</p></div>
+          <div class="fact"><p class="fl">Shipping since</p><p class="fv">2023</p></div>
+        </div>
+        <div class="case-links">
+          <a class="pill" href="https://apps.apple.com/in/app/floo-travel-companion-app/id6757790079" target="_blank" rel="noopener">App Store</a>
+          <a class="pill" href="https://play.google.com/store/apps/details?id=com.floo.go" target="_blank" rel="noopener">Google Play</a>
+          <a class="pill" href="https://gofloo.in" target="_blank" rel="noopener">gofloo.in</a>
+        </div>
+      </article>
+
+      <article class="case rv">
+        <div class="case-top">
+          <h3>Murmur</h3>
+          <span class="live"><span class="pulse" aria-hidden="true"></span> Live on the Mac App Store</span>
+        </div>
+        <p class="what">A voice-capture app for macOS. A floating dot sits on your screen; you speak, and the thought lands in Apple Notes. Built, reviewed, and shipped through the Mac App Store.</p>
+        <div class="facts">
+          <div class="fact"><p class="fl">Role</p><p class="fv">Built everything</p></div>
+          <div class="fact"><p class="fl">Platform</p><p class="fv">macOS, native</p></div>
+          <div class="fact"><p class="fl">Distribution</p><p class="fv">Mac App Store</p></div>
+        </div>
+        <div class="case-links">
+          <a class="pill" href="https://apps.apple.com/us/app/murmur-just-say-it/id6806840357?mt=12" target="_blank" rel="noopener">Mac App Store</a>
+          <a class="pill" href="https://trymurmur.in" target="_blank" rel="noopener">trymurmur.in</a>
+        </div>
+      </article>
+
+      <div class="sec-eyebrow rv" style="margin-top: 72px;"><span class="line" aria-hidden="true"></span><span class="lbl">The lab</span></div>
+      <p class="sec-sub rv">Smaller builds that keep the shipping muscle warm.</p>
+      <div class="lab-grid">
+        <a class="lab rv" href="https://ichiban-anime.netlify.app" target="_blank" rel="noopener">
+          <div class="lab-top"><h3>Ichiban</h3><span class="tag live">Live</span></div>
+          <p>Rank and rate the anime you have watched, get recommendations from your own taste.</p>
+        </a>
+        <div class="lab rv">
+          <div class="lab-top"><h3>Wordis</h3><span class="tag">In progress</span></div>
+          <p>A competitive English word-game platform: timed duels across synonyms, spelling, and vocabulary.</p>
+        </div>
+        <div class="lab rv">
+          <div class="lab-top"><h3>Toda</h3><span class="tag">In build</span></div>
+          <p>An iPhone Lock Screen to-do app. Day, month, and year lists where you already look.</p>
+        </div>
+        <div class="lab rv">
+          <div class="lab-top"><h3>WhatNext</h3><span class="tag">MVP</span></div>
+          <p>Career discovery for class 8 to 12 students choosing their stream.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="sec-eyebrow rv"><span class="line" aria-hidden="true"></span><span class="lbl">Work with me</span></div>
+      <h2 class="sec rv">One person, <em>the output of a team.</em></h2>
+      <p class="sec-sub rv">You get product thinking, engineering, and launch handled by the same pair of hands that shipped the products above.</p>
+      <div class="svc-grid rv">
+        <div class="svc">
+          <span class="num">01</span>
+          <h3>MVPs, idea to app store</h3>
+          <p>A working product in weeks, through store review and into users' hands.</p>
+        </div>
+        <div class="svc">
+          <span class="num">02</span>
+          <h3>Mobile apps</h3>
+          <p>iOS and Android from one codebase with React Native and Expo.</p>
+        </div>
+        <div class="svc">
+          <span class="num">03</span>
+          <h3>Backends and APIs</h3>
+          <p>Django and DRF on AWS. Production grade, documented, handed over clean.</p>
+        </div>
+        <div class="svc">
+          <span class="num">04</span>
+          <h3>Web apps and landing pages</h3>
+          <p>React builds that load fast and convert, like the ones behind my own products.</p>
+        </div>
+      </div>
+      <div class="sec-eyebrow rv" style="margin-top: 64px;"><span class="line" aria-hidden="true"></span><span class="lbl">How it runs</span></div>
+      <div class="steps rv">
+        <div class="step"><span class="num">01</span><h3>Scope</h3><p>A short call, then a written fixed-price scope. You know the cost before we start.</p></div>
+        <div class="step"><span class="num">02</span><h3>Build</h3><p>Working software from the first week, with a demo every week after.</p></div>
+        <div class="step"><span class="num">03</span><h3>Launch</h3><p>Store submission and review handling, or production deploy. I own the last mile.</p></div>
+        <div class="step"><span class="num">04</span><h3>Handover</h3><p>Documented code, credentials transferred, nothing held hostage.</p></div>
+      </div>
+      <div class="terms rv">
+        <span>Fixed scope, fixed price</span>
+        <span>Weekly demos</span>
+        <span>Replies within 24 hours, IST</span>
+      </div>
+      <div class="svc-cta rv">
+        <a class="btn btn-fill" href="mailto:mail.pranay95@gmail.com?subject=Project%20inquiry">Request a quote</a>
+        <a class="btn btn-ghost" href="https://wa.me/917000326766" target="_blank" rel="noopener">WhatsApp me</a>
+        <button class="btn btn-ghost" id="copyBtn" type="button">Copy email</button>
+        <span class="copied" id="copied1" role="status" aria-live="polite">Copied</span>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="sec-eyebrow rv"><span class="line" aria-hidden="true"></span><span class="lbl">Experience</span></div>
+      <h2 class="sec rv">The road <em>so far.</em></h2>
+      <ul class="xp rv">
+        <li class="now">
+          <span class="when">2023 to now</span>
+          <div>
+            <h3>Founder and CEO, <em>Gofloo Tech</em></h3>
+            <p>DPIIT-recognized startup. Took Floo from idea to live on both app stores, then shipped Murmur as a second product line. Every merge, deploy, and store release goes through me.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2022 to 2023</span>
+          <div>
+            <h3>Backend Engineer, Quantive</h3>
+            <p>Backend development on production SaaS systems.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2021 to 2022</span>
+          <div>
+            <h3>Backend Engineer, DXC Technology</h3>
+            <p>Enterprise backend development.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2020</span>
+          <div>
+            <h3>B.Tech, Computer Science</h3>
+          </div>
+        </li>
       </ul>
-    </div>
+    </section>
 
-    <p class="also">Smaller things stay in motion too: <a href="https://ichiban-anime.netlify.app" target="_blank" rel="noopener">Ichiban</a>, an anime ranking app, and an iPhone Lock Screen to-do app currently in build.</p>
-  </section>
-
-  <section id="services">
-    <p class="eyebrow">Services</p>
-    <h2 class="sec-h">Work with me</h2>
-    <p class="sec-sub">One person with the output of a team. You get product thinking, engineering, and launch handled by the same pair of hands that shipped the products above.</p>
-    <div class="svc-grid">
-      <div class="card svc">
-        <h3>MVPs, idea to app store</h3>
-        <p>A working product in weeks, through store review and into users' hands.</p>
-        <span class="from">from ₹1.5L</span>
+    <section id="contact" class="contact">
+      <div class="sec-eyebrow rv"><span class="line" aria-hidden="true"></span><span class="lbl">Contact</span></div>
+      <h2 class="contact-big rv">Have something <em>worth building?</em></h2>
+      <p class="sec-sub rv">Email is the fastest way to reach me. I reply within 24 hours, IST.</p>
+      <div class="email-row rv">
+        <a class="email" href="mailto:mail.pranay95@gmail.com">mail.pranay95@gmail.com</a>
+        <button class="btn btn-ghost" id="copyBtn2" type="button">Copy</button>
+        <a class="btn btn-ghost" href="https://wa.me/917000326766" target="_blank" rel="noopener">WhatsApp</a>
+        <span class="copied" id="copied2" role="status" aria-live="polite">Copied</span>
       </div>
-      <div class="card svc">
-        <h3>Mobile apps</h3>
-        <p>iOS and Android from one codebase with React Native and Expo.</p>
-        <span class="from">from ₹80k</span>
+      <div class="soc rv">
+        <a class="pill" href="https://wa.me/917000326766" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="pill" href="https://github.com/Pranay-Pratap" target="_blank" rel="noopener">GitHub</a>
+        <a class="pill" href="https://www.linkedin.com/in/pranay-pratap-s/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="pill" href="https://x.com/PranayPratap_" target="_blank" rel="noopener">X</a>
+        <a class="pill" href="https://gofloo.in" target="_blank" rel="noopener">gofloo.in</a>
+        <a class="pill" href="https://trymurmur.in" target="_blank" rel="noopener">trymurmur.in</a>
       </div>
-      <div class="card svc">
-        <h3>Backends and APIs</h3>
-        <p>Django and DRF on AWS. Production grade, documented, handed over clean.</p>
-        <span class="from">from ₹30k</span>
-      </div>
-      <div class="card svc">
-        <h3>Websites and landing pages</h3>
-        <p>Business sites your team can update without a developer, and landing pages that load fast and convert.</p>
-        <span class="from">from ₹15k</span>
-      </div>
-    </div>
-    <div class="terms">
-      <span>Fixed scope, fixed price</span>
-      <span>Weekly demos</span>
-      <span>Replies within 24 hours, IST</span>
-    </div>
-
-    <ol class="steps" aria-label="How a project works">
-      <li><b>1 · Brief</b>Tell me what you're building. I reply with scope, timeline, and a quote.</li>
-      <li><b>2 · Build</b>Frequent builds you can open and test, not a big reveal at the end.</li>
-      <li><b>3 · Launch</b>Deployed, submitted to the stores, and handed over.</li>
-    </ol>
-
-    <div class="svc-cta">
-      <a class="btn" href="mailto:mail.pranay95@gmail.com?subject=Project%20inquiry&amp;body=Hi%20Pranay%2C%0A%0AWhat%20I%20am%20building%3A%0APlatforms%20(iOS%20%2F%20Android%20%2F%20web%20%2F%20backend)%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0AThanks%2C">Request a quote</a>
-      <a class="btn ghost" href="https://wa.me/917000326766" target="_blank" rel="noopener noreferrer">WhatsApp me</a>
-      <a class="btn ghost" href="https://calendly.com/mail-pranay95/15min" target="_blank" rel="noopener noreferrer">Book a 15 min call</a>
-    </div>
-    <p class="handover">You get the source code, the deployment, and a clean handover. No lock-in.</p>
-  </section>
-
-  <section id="experience">
-    <p class="eyebrow">Experience</p>
-    <h2 class="sec-h">Where I've worked</h2>
-    <ul class="xp">
-      <li class="now">
-        <span class="when">2023 to now</span>
-        <div>
-          <h3>Founder and CEO, Gofloo Tech</h3>
-          <p>DPIIT-recognized startup. Took Floo from idea to live on both app stores, then shipped Murmur as a second product line. Every merge, deploy, and store release goes through me.</p>
-        </div>
-      </li>
-      <li>
-        <span class="when">2022 to 2023</span>
-        <div>
-          <h3>Backend Engineer, Quantive</h3>
-          <p>Backend development on production SaaS systems.</p>
-        </div>
-      </li>
-      <li>
-        <span class="when">2021 to 2022</span>
-        <div>
-          <h3>Backend Engineer, DXC Technology</h3>
-          <p>Enterprise backend development.</p>
-        </div>
-      </li>
-      <li>
-        <span class="when">2020</span>
-        <div>
-          <h3>B.Tech, Computer Science</h3>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <section id="contact" class="contact">
-    <p class="eyebrow">Contact</p>
-    <h2 class="sec-h">Get in touch</h2>
-    <p class="sec-sub">Email or WhatsApp, whichever is easier for you. I reply within 24 hours, IST.</p>
-    <div class="email-row">
-      <a class="email" href="mailto:mail.pranay95@gmail.com">mail.pranay95@gmail.com</a>
-      <button class="btn ghost" id="copyBtn" type="button">Copy</button>
-      <span class="copied" id="copied" role="status" aria-live="polite"></span>
-      <a class="btn ghost" href="https://wa.me/917000326766" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-    </div>
-    <div class="soc">
-      <a href="https://github.com/Pranay-Pratap" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/pranay-pratap-s/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://x.com/PranayPratap_" target="_blank" rel="noopener">X</a>
-      <a href="https://gofloo.in" target="_blank" rel="noopener">gofloo.in</a>
-      <a href="https://trymurmur.in" target="_blank" rel="noopener">trymurmur.in</a>
-    </div>
-  </section>
-
+    </section>
+  </div>
 </main>
 
 <footer>
-  <div class="wrap foot-in">
-    <span>© 2026 Pranay Pratap Singh. Gofloo Tech, Bhopal, India.</span>
-    <span>Built by hand, like everything else here.</span>
+  <div class="wrap foot-in" style="padding-left: 0; padding-right: 0;">
+    <span>© 2026 Pranay Pratap Singh · Gofloo Tech · Bhopal, India</span>
+    <span>Built by hand, like everything else here</span>
   </div>
 </footer>
 
 <script>
 (function () {
-  var root = document.documentElement;
-  var themeMeta = document.querySelector('meta[name="theme-color"]');
-  function syncThemeColor() {
-    themeMeta.setAttribute("content", root.getAttribute("data-theme") === "dawn" ? "#f4eee1" : "#0a0e1c");
-  }
-  syncThemeColor();
-  document.getElementById("themeBtn").addEventListener("click", function () {
-    var t = root.getAttribute("data-theme") === "night" ? "dawn" : "night";
-    root.setAttribute("data-theme", t);
-    try { localStorage.setItem("pn-theme", t); } catch (e) {}
-    syncThemeColor();
-  });
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* copy email: write the text into the live region so screen readers announce it */
-  var EMAIL = "mail.pranay95@gmail.com";
-  var btn = document.getElementById("copyBtn");
-  var note = document.getElementById("copied");
-  var timer = null;
-  function show(msg) {
-    note.textContent = msg;
-    clearTimeout(timer);
-    timer = setTimeout(function () { note.textContent = ""; }, 1800);
+  /* marquee content, doubled for seamless loop */
+  var items = ["Python", "Django · DRF", "AWS", "React Native", "Expo", "React", "Vite", "TypeScript", "iOS", "Android", "macOS"];
+  var mq = document.getElementById("mq");
+  var half = items.map(function (t, i) {
+    return '<span class="' + (i % 4 === 0 ? "a" : "") + '">' + t + "</span><span>·</span>";
+  }).join("");
+  mq.innerHTML = half + half;
+
+  /* scroll reveals */
+  var rvs = document.querySelectorAll(".rv");
+  if (!reduced && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    rvs.forEach(function (el, i) {
+      el.style.transitionDelay = (Math.min(i % 5, 3) * 0.08) + "s";
+      io.observe(el);
+    });
+  } else {
+    rvs.forEach(function (el) { el.classList.add("in"); });
   }
+
+  /* stat count-up */
+  function countUp(el) {
+    var target = parseInt(el.getAttribute("data-count"), 10);
+    var suffix = el.getAttribute("data-suffix") || "";
+    if (reduced) { el.innerHTML = target + '<span>' + suffix + "</span>"; return; }
+    var start = null, durMs = 1100;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / durMs, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.innerHTML = Math.round(eased * target) + '<span>' + suffix + "</span>";
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var vals = document.querySelectorAll(".id-val[data-count]");
+  if ("IntersectionObserver" in window) {
+    var io2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { countUp(e.target); io2.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    vals.forEach(function (el) { io2.observe(el); });
+  } else {
+    vals.forEach(countUp);
+  }
+
+  /* copy email */
+  var EMAIL = "mail.pranay95@gmail.com";
   function fallback() {
     var t = document.createElement("textarea");
     t.value = EMAIL;
@@ -554,14 +651,22 @@
     document.body.removeChild(t);
     return ok;
   }
-  btn.addEventListener("click", function () {
-    function done(ok) { show(ok ? "Copied" : "Couldn't copy"); }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(EMAIL).then(function () { done(true); }, function () { done(fallback()); });
-    } else {
-      done(fallback());
-    }
-  });
+  function wire(btnId, noteId) {
+    var btn = document.getElementById(btnId);
+    var note = document.getElementById(noteId);
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      function done() {
+        note.classList.add("on");
+        setTimeout(function () { note.classList.remove("on"); }, 1800);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(EMAIL).then(done).catch(function () { if (fallback()) done(); });
+      } else if (fallback()) { done(); }
+    });
+  }
+  wire("copyBtn", "copied1");
+  wire("copyBtn2", "copied2");
 })();
 </script>
 </body>
